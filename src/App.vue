@@ -60,7 +60,7 @@
 
     </keep-alive>
     <keep-alive>
-    <length v-if="index === 4" @length_index="length_index"></length>
+    <length v-model="noRod" v-if="index === 4" @length_index="length_index"></length>
 
     </keep-alive>
     <keep-alive>
