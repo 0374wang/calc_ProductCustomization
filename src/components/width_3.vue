@@ -8,10 +8,6 @@
 <input type="number" class="width_inp" >
 <span class="width_sp">inch</span>
 <div class="zongsebt" @click="width_step">CONTINUE</div>
-<h1>{{modelValue}}</h1>
-<hr>
-<h1>{{norod_flag}}</h1>
-
 </div>
 </template>
 <script>
@@ -19,10 +15,14 @@ import { ref } from '@vue/reactivity'
 import { onActivated } from '@vue/runtime-core';
 export default {
     props:{
-    modelValue: Number,
+    modelValue:{
+        type:Number,
+        default:11
+    }
     },
     emits: ["width_index"],
     setup(_,{emit}) {
+        console.log(_.modelValue)
         var norod_flag = ref(null);
         onActivated(()=>{
         if(_.modelValue == 12){

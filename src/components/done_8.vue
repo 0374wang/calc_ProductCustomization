@@ -15,24 +15,24 @@
 
     <p class="ald_d3">占位</p>
 
-    <p class="ald_1 ald_2">RECALCULATE NOW</p>
-    <p class="ald_3">
+    <p class="ald_1 ald_2" @click="recalc">RECALCULATE NOW</p>
+    <p class="ald_3 zanshide">
       Send your measurements to yourself so you don't forget them!
     </p>
-    <div class="k_email">
+    <div class="k_email ">
       <input
-        class="k_email_1 k_email_3"
+        class="k_email_1 k_email_3 zanshide"
         type="email"
         placeholder="Your email"
       />
       <input
-        class="k_email_2 k_email_3"
+        class="k_email_2 k_email_3 zanshide"
         type="text"
         placeholder="Your project/room name (not required)"
       />
       <div class="k_email_da">
         <a href="" class="k_email_a">SHOP NOW</a>
-        <div class="k_email_d">SEND</div>
+        <div class="k_email_d zanshide">SEND</div>
       </div>
     </div>
   </aside>
@@ -47,7 +47,9 @@ export default {
           document.querySelector('.ald_d3').innerText = getCookie('cts_qty_c');
           
       })
-
+    function recalc(){
+      location.reload();
+    }
       let allcookies = document.cookie;
     function getCookie(cookie_name) {
         var allcookies = document.cookie;
@@ -65,14 +67,17 @@ export default {
     // let cookie_val = getCookie(cookie的名字);
   
 
-  },
+  return {recalc};
+  }
 };
 </script>
 <style lang="less" scoped>
 img {
   width: 100%;
 }
-
+.zanshide{
+    visibility: hidden;
+}
 .k_fuln_p1 {
   position: absolute;
   top: 140px;
@@ -108,6 +113,7 @@ img {
   letter-spacing: 0.2px;
   color: #988c81;
   padding: 20px 0;
+  cursor: pointer;
 }
 .ald_3 {
   font-family: "Avenir Book", "Avenir";

@@ -9,8 +9,8 @@
 <input type="number" class="my__ipt" style="margin-bottom:10px">
 <span class="width_sp">inch</span>
 <div class="zongsebt" v-if="len_flag == 11" @click="length_step">CONTINUE</div>
-<div class="zongsebt" v-if="len_flag == 12" @click="length_step_norod_1">CONTINUE888</div>
-<div class="zongsebt" v-if="len_flag == 13" @click="length_step_norod_2">CONTINUE999</div>
+<div class="zongsebt" v-if="len_flag == 12" @click="length_step_norod_1">CONTINUE</div>
+<div class="zongsebt" v-if="len_flag == 13" @click="length_step_norod_2">CONTINUE</div>
 </div>
 </template>
 <script>
@@ -29,16 +29,12 @@ export default {
             if(_.modelValue == 12){
                 len_flag.value = 12;
             }
-        })
+        });
         const length_step = function(){
             if(document.querySelector('.my__ipt').value != ''){
               let len  = document.querySelector('.my__ipt').value
                document.cookie = `cts_length_c=${len}`
                 emit("length_index",len)
-
-                // if(len_flag.value == 11){
-                //     len_flag.value = 13;
-                // }
             }
         }
         const length_step_norod_1 = function(){
@@ -47,8 +43,8 @@ export default {
         }
         const length_step_norod_2 = function(){
               let len  = document.querySelector('.my__ipt').value
+              document.cookie = `cts_length_c=${len}`
                 emit("length_index",len)
-
         }
         return{length_step,len_flag,length_step_norod_1,length_step_norod_2};
     }

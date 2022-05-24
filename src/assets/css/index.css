@@ -45,9 +45,8 @@
   height: 100px;
   padding-top: 20px;
 }
-.kwang_step_ul::after {
-  content: "";
-  width: 100%;
+.kwang_step_ul .myhrwid {
+  width: 1245px;
   height: 1px;
   top: 30px;
   z-index: 2;
@@ -95,4 +94,5 @@
   font-size: 14px;
   letter-spacing: 0.1px;
   text-align: center;
+  margin-top: 7px;
 }
