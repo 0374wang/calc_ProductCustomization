@@ -72,6 +72,7 @@ export default {
 <style lang="less">
 .k_change_m_l {
   padding: 10px;
+  cursor: pointer; 
 }
 .k_change_m_l:hover {
   border: 5px solid #c0c0bd;
