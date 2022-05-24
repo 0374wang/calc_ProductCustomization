@@ -12,7 +12,7 @@
 </template>
 <script>
 import { ref } from '@vue/reactivity'
-import { onActivated } from '@vue/runtime-core';
+import { inject, onActivated } from '@vue/runtime-core';
 export default {
     props:{
     modelValue:{
@@ -22,7 +22,8 @@ export default {
     },
     emits: ["width_index"],
     setup(_,{emit}) {
-        console.log(_.modelValue)
+        console.log(inject("kwang"))
+        
         var norod_flag = ref(null);
         onActivated(()=>{
         if(_.modelValue == 12){

@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, provide } from "vue";
 import "@/assets/css/index.css";
 import Style1 from "./components/style_1.vue";
 import Rod2 from "./components/rod_2.vue";
@@ -169,6 +169,7 @@ export default {
     const root_4 = ref(null);
     const root_5 = ref(null);
     var noRod = ref(11);
+    const myprov = provide("kwang",6)
     onMounted(() => {
       window.onresize = function () {
         var hrwid =

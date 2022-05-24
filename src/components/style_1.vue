@@ -29,6 +29,7 @@
                     <p class="kchangp1">More Design Idea?</p>
                     <p class="kcahngp3"> contact us </p>
                 </div>
+                
             </div>
         </div>
         <div class="k_change_e"></div>
