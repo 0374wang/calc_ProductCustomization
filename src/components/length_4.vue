@@ -5,9 +5,9 @@
 <p class="length_p1 k_center" >What's the height from rod top to floor?</p>
 <p class="length_p2 k_center" >*The length of the rod (finials excluded)</p>
 
-<div class=" k_center" style="bottom:14%">
+<div class=" k_center" style="bottom:15%;width:175px;">
 <input type="number" class="my__ipt" style="margin-bottom:10px">
-<span class="width_sp">inch</span>
+<span class="width_sp" style="right:5px;">inch</span>
 <div class="zongsebt" v-if="len_flag == 11" @click="length_step">CONTINUE</div>
 <div class="zongsebt" v-if="len_flag == 12" @click="length_step_norod_1">CONTINUE</div>
 <div class="zongsebt" v-if="len_flag == 13" @click="length_step_norod_2">CONTINUE</div>

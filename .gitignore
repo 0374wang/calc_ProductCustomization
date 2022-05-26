@@ -25,5 +25,5 @@ pnpm-debug.log*
 
 #忽略我本地的图片
 
-*png/
-*jpg/
+*.png
+*.jpg

@@ -50,37 +50,40 @@ export default {
     const style3 = ref(null);
 
     const style_index1 = function () {
-    //   console.log(document.querySelector(".k_step_d.active_fc").textContent);
-    document.cookie = `cts_header_c=Rod Pocket`;
-    // docCookies.setItem
-    // document.cookie.setItem
+      //   console.log(document.querySelector(".k_step_d.active_fc").textContent);
+      document.cookie = `cts_header_c=Rod Pocket`;
+      // docCookies.setItem
+      // document.cookie.setItem
       emit("style_index", style1.value.textContent);
-      
     };
     const style_index2 = function () {
-    document.cookie = `cts_header_c=Grommet`;
+      document.cookie = `cts_header_c=Grommet`;
       emit("style_index", style2.value.textContent);
     };
     const style_index3 = function () {
-      document.cookie = `cts_header_c=Pinch Pleat – Double` 
+      document.cookie = `cts_header_c=Pinch Pleat – Double`;
       emit("style_index", style3.value.textContent);
     };
 
-    return { style_index1, style_index2, style_index3, style1,style2,style3 };
+    return { style_index1, style_index2, style_index3, style1, style2, style3 };
   },
 };
 </script>
 <style lang="less">
 .k_change_m_l {
   padding: 10px;
-  cursor: pointer; 
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 .k_change_m_l:hover {
-  border: 5px solid #c0c0bd;
+  border: 1px solid #8f7760;
+  border-radius: 5px;
 }
 .kwang_container {
-  height: 720px;
+  height: 704px;
+  width: 100%;
   background: no-repeat url(../assets/底图.jpg);
+  background-size: 100% 100% !important;
   .k_change_ct {
     padding: 0 240px;
   }

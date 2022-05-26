@@ -51,11 +51,11 @@ export default {
       location.reload();
     }
       let allcookies = document.cookie;
-    function getCookie(cookie_name) {
+    function getCookie(cookie) {
         var allcookies = document.cookie;
-      var cookie_pos = allcookies.indexOf(cookie_name); 
+      var cookie_pos = allcookies.indexOf(cookie); 
       if (cookie_pos != -1) {
-          cookie_pos += cookie_name.length + 1; 
+          cookie_pos += cookie.length + 1; 
         var cookie_end = allcookies.indexOf(";", cookie_pos);
         if (cookie_end == -1) {
             cookie_end = allcookies.length;

@@ -6,7 +6,7 @@
 <p class="width_p2">(finials excluded)</p>
 <div class="myK_Input k_center">
 <input type="number" class="width_inp" >
-<span class="width_sp">inch</span>
+<span class="width_sp" >inch</span>
 <div class="zongsebt" @click="width_step">CONTINUE</div>
 </div>
 </template>
@@ -97,6 +97,9 @@ export default {
     width: 175px ;
     margin-bottom: 10px;
     text-align: center;
+      &:focus-visible {
+          outline: none;
+  }
     }
     .width_sp{
         position: absolute;

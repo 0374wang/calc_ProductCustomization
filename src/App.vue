@@ -14,7 +14,7 @@
             >
           </div>
           <div class="k_step_d" :class="{ active_fc: 1 == index }">Style</div>
-          <p ref="root_1"></p>
+          <p ref="root_1" class="root_1_header"></p>
         </li>
         <li class="k_step_li">
           <div class="k_step_u" :class="{ k_step_active: 2 == index }">
@@ -56,18 +56,18 @@
             >
           </div>
           <div class="k_step_d" :class="{ active_fc: 5 == index }">Panels</div>
-          <p ref="root_5"></p>
+          <p ref="root_5" class="panel_flag"></p>
         </li>
         <li class="k_step_li">
           <div class="k_step_u" :class="{ k_step_active: 6 == index }">
-            <span @click="index = 6" :class="{ active_fc: 6 == index }">
+            <span @click="root_6_index" :class="{ active_fc: 6 == index }">
               6</span
             >
           </div>
           <div class="k_step_d" :class="{ active_fc: 6 == index }">
             Fullness
           </div>
-          <p></p>
+          <p class="fullness_pin"></p>
         </li>
         <li class="k_step_li">
           <div class="k_step_u" :class="{ k_step_active: 7 == index }">
@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import { ref, onMounted, provide } from "vue";
+import { ref, onMounted, provide, readonly } from "vue";
 import "@/assets/css/index.css";
 import Style1 from "./components/style_1.vue";
 import Rod2 from "./components/rod_2.vue";
@@ -169,6 +169,9 @@ export default {
     const root_4 = ref(null);
     const root_5 = ref(null);
     var noRod = ref(11);
+
+
+
     const myprov = provide("kwang",6)
     onMounted(() => {
       window.onresize = function () {
@@ -179,14 +182,30 @@ export default {
       };
     });
     function myBack() {
+      //判断若果是pinch头部，跳过fullness
+      if(index.value == 7){
+        if(root_1.value.innerText == 'Pinch Pleat – Double'){
+          index.value--;
+        }
+      }
       if (index.value != 1) {
         index.value--;
       }
     }
+
     const style_index = function (a) {
       root_1.value.textContent = a;
       index.value++;
+      header.value = a;
+      return header;
     };
+    // 把step1的header样式传给step5,提供给step5显示不同的头部来选择单双
+      var header = ref(0);
+      provide("header",header)
+      provide("root_1",root_1)
+
+
+
     const rod_index = function (a) {
       root_2.value.textContent = a;
       if (a == "YES") {
@@ -211,7 +230,15 @@ export default {
     };
     const panel_index = function (a) {
       root_5.value.textContent = a;
+      //判断若果是pinch头部，跳过fullness
+      if(root_1.value.innerText == 'Pinch Pleat – Double'){
+        index.value++;
+        document.querySelector('.fullness_pin').innerText = '2x Fullness'
+      }
       index.value++;
+    };
+    const root_6_index = function(){
+      if(document.querySelector('.root_1_header').innerText = 'Pinch Pleat – Double'){console.log('***')}
     };
     return {
       index,
@@ -227,6 +254,8 @@ export default {
       panel_index,
       root_5,
       noRod,
+      header,
+      root_6_index
     };
   },
 };
@@ -267,6 +296,7 @@ export default {
   left: 200px;
   padding-top: 10px;
   cursor: pointer;
+  z-index: 3;
 }
 
 //初始化样式
