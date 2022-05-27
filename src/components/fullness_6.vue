@@ -1,27 +1,49 @@
 <template>
 <img src="../assets/img/fullness/fullness_1.png" alt="">
+
+<img class="piaofu" src="../assets/img/fullness/full_zindex/rod10离地单片.png" alt="" v-if="full_index_2 == 111">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/rod10离地双片.png" alt="" v-if="full_index_2 == 121">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/rod15离地单片.png" alt="" v-if="full_index_2 == 211">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/rod15离地双片.png" alt="" v-if="full_index_2 == 221">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/rod20离地单片.png" alt="" v-if="full_index_2 == 311">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/rod20离地双片.png" alt="" v-if="full_index_2 == 321">
+
+<img class="piaofu" src="../assets/img/fullness/full_zindex/grommet15离地单片.png" alt="" v-if="full_index_2 == 112">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/grommet15离地双片.png" alt="" v-if="full_index_2 == 122">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/grommet20离地双片.png" alt="" v-if="full_index_2 == 222">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/grommet20离地单片.png" alt="" v-if="full_index_2 == 212">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/grommet25离地单片.png" alt="" v-if="full_index_2 == 312">
+<img class="piaofu" src="../assets/img/fullness/full_zindex/grommet25离地双片.png" alt="" v-if="full_index_2 == 322">
+
+<!-- <img src="../assets/img/fullness/full_zindex/pinch离地单片.png" alt="">
+<img src="../assets/img/fullness/full_zindex/pinch离地双片.png" alt=""> -->
+
 <p class=" k_fuln_p1 k_center">Which finished look of curtain do you prefer?<br>
  Choose fullness based on that.</p>
 
  <div class="fuln_all_l">
      <div class="fuln_img_all">
-         <div class="fuln_div" @click="full_c1"><img src="../assets/img/fullness/fullness_img_1.png" alt=""><span class="fuln_span">1x  Fullness</span></div>
+         <div class="fuln_div" @click="full_c1()"><img src="../assets/img/fullness/fullness_img_1.png" alt=""><span class="fuln_span">1x  Fullness</span></div>
          <p class="myfulnshu"></p>
          <div class="fuln_div" @click="full_c2"><img src="../assets/img/fullness/fullness_img_2.png" alt=""><span class="fuln_span">1.5x  Fullness</span></div>
          <p class="myfulnshu"></p>
          <div class="fuln_div" @click="full_c3"><img src="../assets/img/fullness/fullness_img_3.png" alt=""><span class="fuln_span">2x  Fullness</span></div>
      </div>
-     <p class="fuln_r1 zanshide">Original Choice </p>
-     <div class="fuln_r2 zanshide"></div>
-     <p class="fuln_r3 zanshide">Get a flat sheet look when kept drawn in.
-Use original fabric to cover the width.
-</p>
+<div class="ful_dis">
+     <p class="fuln_r1 ">Original Choice </p>
+     <div class="fuln_r2 "></div>
+     <p class="fuln_r3 ">Get a flat sheet look when kept drawn in.
+                                    Use original fabric to cover the width.
+    </p>
+</div>
+
  </div>
 </template>
-<script>
+<script> 
 import { inject, onActivated, ref } from '@vue/runtime-core'
 export default {
-    setup(props) {
+    emits:["full_index"],
+    setup(_,{emit}) {
         //判断头部样式的索引值
         var full_index = ref(null)
         //判断单双 索引值
@@ -33,16 +55,29 @@ export default {
         // 判断fullness
         // 如果是pinch ，则不会跳转到此页面，不需做 full_index 的加值判断
         const full_c1 = ()=>{
-            full_index.value +100;
-            console.log(full_index.value)
+            full_index_2.value = full_index_1.value +100;
+            console.log(full_index_1.value);
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50" width to avoid drapes looking flat.Using 1.5 times fabric across the width. '
+            emit("full_index","1x Fullness")
         };
         const full_c2 = ()=>{
-            full_index.value +200;
-            console.log(full_index.value)
+            full_index_2.value = full_index_1.value +200;
+            console.log(full_index_2.value);
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50" width to avoid drapes looking flat.Using 1.5 times fabric across the width. '
+            emit("full_index","1.5x Fullness")
         };
         const full_c3 = ()=>{
-            full_index.value +300;
-            console.log(full_index.value)
+            full_index_2.value = full_index_1.value +300;
+            console.log(full_index_2.value);
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50" width to avoid drapes looking flat.Using 1.5 times fabric across the width. '
+            emit("full_index","2x Fullness")
+
         }
 
         onActivated(()=>{
@@ -70,6 +105,9 @@ export default {
 <style lang="less" scoped>
     img{
         width: 100%;
+    }
+    .ful_dis{
+        display: none;
     }
     .myfulnshu{
             width: 1px;

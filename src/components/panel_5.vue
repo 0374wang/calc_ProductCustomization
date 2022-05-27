@@ -27,6 +27,7 @@ export default {
         if(header.value == 'Rod Pocket'){
             h_style.value = 'rod'
         }
+        
         })
 
         const panel_one = ()=>{

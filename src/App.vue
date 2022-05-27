@@ -67,7 +67,7 @@
           <div class="k_step_d" :class="{ active_fc: 6 == index }">
             Fullness
           </div>
-          <p class="fullness_pin"></p>
+          <p class="fullness_pin" ref="root_6"></p>
         </li>
         <li class="k_step_li">
           <div class="k_step_u" :class="{ k_step_active: 7 == index }">
@@ -125,7 +125,7 @@
       <panel v-if="index === 5" @panel_index="panel_index"></panel>
     </keep-alive>
     <keep-alive>
-      <fullness v-if="index === 6"></fullness>
+      <fullness v-if="index === 6" @full_index="full_index"></fullness>
     </keep-alive>
     <keep-alive>
       <botton v-if="index === 7"></botton>
@@ -168,6 +168,7 @@ export default {
     const root_3 = ref(null);
     const root_4 = ref(null);
     const root_5 = ref(null);
+    const root_6 = ref(null);
     var noRod = ref(11);
 
 
@@ -238,8 +239,18 @@ export default {
       index.value++;
     };
     const root_6_index = function(){
-      if(document.querySelector('.root_1_header').innerText = 'Pinch Pleat – Double'){console.log('***')}
+      if(document.querySelector('.root_1_header').innerText == 'Pinch Pleat – Double'){
+        if(index.value == 7 ){
+          index.value--;index.value--;
+        }
+      }else{
+        index.value =6;
+      }
     };
+    const full_index = function(a){
+      root_6.value.textContent = a;
+      index.value++;
+    }
     return {
       index,
       myBack,
@@ -251,11 +262,13 @@ export default {
       root_3,
       length_index,
       root_4,
-      panel_index,
+      panel_index, 
       root_5,
       noRod,
       header,
-      root_6_index
+      root_6_index,
+      full_index,
+      root_6
     };
   },
 };
