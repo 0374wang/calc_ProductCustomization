@@ -15,6 +15,7 @@
 <img class="piaofu" src="../assets/img/fullness/full_zindex/grommet25离地单片.png" alt="" v-if="full_index_2 == 312">
 <img class="piaofu" src="../assets/img/fullness/full_zindex/grommet25离地双片.png" alt="" v-if="full_index_2 == 322">
 
+
 <!-- <img src="../assets/img/fullness/full_zindex/pinch离地单片.png" alt="">
 <img src="../assets/img/fullness/full_zindex/pinch离地双片.png" alt=""> -->
 
@@ -23,11 +24,27 @@
 
  <div class="fuln_all_l">
      <div class="fuln_img_all">
-         <div class="fuln_div" @click="full_c1()"><img src="../assets/img/fullness/fullness_img_1.png" alt=""><span class="fuln_span">1x  Fullness</span></div>
-         <p class="myfulnshu"></p>
-         <div class="fuln_div" @click="full_c2"><img src="../assets/img/fullness/fullness_img_2.png" alt=""><span class="fuln_span">1.5x  Fullness</span></div>
-         <p class="myfulnshu"></p>
-         <div class="fuln_div" @click="full_c3"><img src="../assets/img/fullness/fullness_img_3.png" alt=""><span class="fuln_span">2x  Fullness</span></div>
+         <div class="fuln_div fuln_div1" @click="full_c1()">
+             
+             <img src="../assets/img/fullness/10离地单片.png" alt="" v-if="small_img == 'rod_single'">
+             <img src="../assets/img/fullness/10离地双片.png" alt="" v-if="small_img == 'rod_split'">
+            <img src="../assets/img/fullness/15离地单片.png" alt="" v-if="small_img == 'gro_single'">
+             <img src="../assets/img/fullness/15离地双片.png" alt="" v-if="small_img == 'gro_split'">
+             <span class="fuln_span fuln_span1">1x  Fullness</span></div>
+             <p class="myfulnshu"></p>
+         <div class="fuln_div fuln_div2" @click="full_c2">
+             <img src="../assets/img/fullness/15离地单片.png" alt="" v-if="small_img == 'rod_single'">
+             <img src="../assets/img/fullness/15离地双片.png" alt="" v-if="small_img == 'rod_split'">
+             <img src="../assets/img/fullness/20离地单片.png" alt="" v-if="small_img == 'gro_single'">
+            <img src="../assets/img/fullness/20离地双片.png" alt="" v-if="small_img == 'gro_split'">
+             <span class="fuln_span fuln_span2">1.5x  Fullness</span></div>
+             <p class="myfulnshu"></p>
+         <div class="fuln_div fuln_div3" @click="full_c3">
+            <img src="../assets/img/fullness/20离地单片.png" alt="" v-if="small_img == 'rod_single'">
+            <img src="../assets/img/fullness/20离地双片.png" alt="" v-if="small_img == 'rod_split'">
+            <img src="../assets/img/fullness/25离地单片.png" alt="" v-if="small_img == 'gro_single'">
+            <img src="../assets/img/fullness/25离地双片.png" alt="" v-if="small_img == 'gro_split'">
+            <span class="fuln_span fuln_span3">2x  Fullness</span></div>
      </div>
 <div class="ful_dis">
      <p class="fuln_r1 ">Original Choice </p>
@@ -40,9 +57,9 @@
  </div>
 </template>
 <script> 
-import { inject, onActivated, ref } from '@vue/runtime-core'
+import { inject, onActivated, onDeactivated, onMounted, ref } from '@vue/runtime-core'
 export default {
-    emits:["full_index"],
+    emits:["full_index","botton_base"],
     setup(_,{emit}) {
         //判断头部样式的索引值
         var full_index = ref(null)
@@ -51,36 +68,102 @@ export default {
         //判断 头部样式 + 单双 + 丰满度
         var full_index_2 = ref(null)
         let root_1 = inject("root_1")
-        
+
+        let small_img = ref(null);
+
+        onMounted(()=>{
+        const fuln_div1 = document.querySelector('.fuln_div1')
+        const fuln_div2 = document.querySelector('.fuln_div2')
+        const fuln_div3 = document.querySelector('.fuln_div3')
+        fuln_div1.addEventListener("mouseenter",function(){
+            const f1_style = document.querySelector('.root_1_header').innerText
+            //
+            full_index_2.value = full_index_1.value +100;
+            console.log(full_index_2.value);
+            //
+            if(f1_style == "Rod Pocket"){
+                document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Original Choice'
+            document.querySelector('.fuln_r3').innerText = 'Get a flat sheet look when kept drawn in.Use original fabric to cover the width.'
+            }
+            if(f1_style == "Grommet"){
+                document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+            }            
+        });
+        fuln_div2.addEventListener("mouseenter",function(){
+            const f1_style = document.querySelector('.root_1_header').innerText;
+            //
+            full_index_2.value = full_index_1.value +200;
+            console.log(full_index_2.value);
+            //
+            if(f1_style == "Rod Pocket"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+            }
+            if(f1_style == "Grommet"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+            }         
+        });
+        fuln_div3.addEventListener("mouseenter",function(){
+            const f1_style = document.querySelector('.root_1_header').innerText;
+            //
+            full_index_2.value = full_index_1.value +300;
+            console.log(full_index_2.value);
+            //
+            if(f1_style == "Rod Pocket"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+            }
+            if(f1_style == "Grommet"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Luxury Choice'
+            document.querySelector('.fuln_r3').innerText = 'Enriched with elegant pleats making large windows even more splendid. Not recommended for small windows due to too many pleats.Use 2.5 times fabric to cover the width.'
+            }           
+        });
+
+
+        });
+
+
+
         // 判断fullness
         // 如果是pinch ，则不会跳转到此页面，不需做 full_index 的加值判断
         const full_c1 = ()=>{
             full_index_2.value = full_index_1.value +100;
             console.log(full_index_1.value);
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
-            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50" width to avoid drapes looking flat.Using 1.5 times fabric across the width. '
-            emit("full_index","1x Fullness")
+            emit("full_index","1x Fullness",full_index_2.value)
         };
         const full_c2 = ()=>{
             full_index_2.value = full_index_1.value +200;
             console.log(full_index_2.value);
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
-            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50" width to avoid drapes looking flat.Using 1.5 times fabric across the width. '
             emit("full_index","1.5x Fullness")
         };
         const full_c3 = ()=>{
             full_index_2.value = full_index_1.value +300;
             console.log(full_index_2.value);
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
-            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50" width to avoid drapes looking flat.Using 1.5 times fabric across the width. '
             emit("full_index","2x Fullness")
-
         }
 
         onActivated(()=>{
+            console.log('jihuole')
+        let f1_style = document.querySelector('.root_1_header').innerText
+        if(f1_style == "Grommet"){
+           document.querySelector('.fuln_span1').innerText = '1.5x  Fullness'
+           document.querySelector('.fuln_span2').innerText = "2x Fullness"
+           document.querySelector('.fuln_span3').innerText = "2.5x Fullness"
+        }
+        if(f1_style == "Rod Pocket"){
+           document.querySelector('.fuln_span1').innerText = '1x  Fullness'
+           document.querySelector('.fuln_span2').innerText = "1.5x Fullness"
+           document.querySelector('.fuln_span3').innerText = "2x Fullness"
+        }
+
         if(root_1.value.innerText == 'Pinch Pleat – Double'){
             full_index.value = 3
         }
@@ -96,9 +179,34 @@ export default {
         if(document.querySelector('.panel_flag').innerText == 'Split Panels'){
             full_index_1.value = full_index.value +20
         }
-        })
-        return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2}
 
+        //
+                // 判断small_img 的值， 计算根据 忽略头部，只计单双和丰满度，
+        // 变量值少，固定判断值为死值
+            // const f1_style = document.querySelector('.root_1_header').innerText;
+            const panel_flag = document.querySelector('.panel_flag').innerText;
+            if(f1_style == "Rod Pocket"){
+                if(panel_flag == "Single Panel"){
+                    small_img.value = 'rod_single'
+                }
+                if(panel_flag == "Split Panels"){
+                    small_img.value = "rod_split"
+                }
+            }
+            if(f1_style == "Grommet"){
+                if(panel_flag == "Single Panel"){
+                    small_img.value = 'gro_single'
+                }
+                if(panel_flag == "Split Panels"){
+                    small_img.value = "gro_split"
+                }
+            }
+        })
+        onDeactivated(()=>{
+            console.log('shiqujihuo')
+            emit("botton_base","full_index_2")
+        })
+        return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2,small_img}
     }
 }
 </script>
@@ -108,6 +216,7 @@ export default {
     }
     .ful_dis{
         display: none;
+        margin-top: 40px; ;
     }
     .myfulnshu{
             width: 1px;
@@ -130,12 +239,12 @@ export default {
     }
     .fuln_all_l{ 
             position: absolute;
-    top: 300px;
+    top: 240px;
     right: 25%;
     width: 300px;
         .fuln_img_all{
             width: 470px;
-            height: 144px;
+            height: 154px;
             display: flex;
             .fuln_div{
 
@@ -177,4 +286,11 @@ export default {
     line-height: 24px;
         }
     }
+
+@media screen and (max-width: 1600px) {
+  .fuln_all_l {
+    transform: scale(0.8);
+    top: 150px;
+  }
+}
 </style>

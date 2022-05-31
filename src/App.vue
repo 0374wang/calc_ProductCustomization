@@ -76,7 +76,7 @@
             >
           </div>
           <div class="k_step_d" :class="{ active_fc: 7 == index }">Botton</div>
-          <p></p>
+          <p ref="root_7"></p>
         </li>
         <li class="k_step_li">
           <div class="k_step_u" :class="{ k_step_active: 8 == index }">
@@ -125,10 +125,10 @@
       <panel v-if="index === 5" @panel_index="panel_index"></panel>
     </keep-alive>
     <keep-alive>
-      <fullness v-if="index === 6" @full_index="full_index"></fullness>
+      <fullness v-if="index === 6" @full_index="full_index" @botton_base="botton_base"></fullness>
     </keep-alive>
     <keep-alive>
-      <botton v-if="index === 7"></botton>
+      <botton v-if="index === 7" :bot_base="bot_base" @botton_index="botton_index" ></botton>
     </keep-alive>
     <keep-alive>
       <alldone v-if="index === 8"></alldone>
@@ -169,6 +169,8 @@ export default {
     const root_4 = ref(null);
     const root_5 = ref(null);
     const root_6 = ref(null);
+    const root_7 = ref(null);
+    let bot_base = ref(null)
     var noRod = ref(11);
 
 
@@ -247,9 +249,19 @@ export default {
         index.value =6;
       }
     };
-    const full_index = function(a){
+    const full_index = function(a,b){
       root_6.value.textContent = a;
+      bot_base.value = b;
+      console.log(bot_base.value,'/*-------')
       index.value++;
+    }
+    const botton_index = function(a){
+      root_7.value.textContent = a;
+      index.value++;
+    }
+    const botton_base = function(a){
+      bot_base.value = a;
+      console.log(bot_base.value)
     }
     return {
       index,
@@ -268,7 +280,11 @@ export default {
       header,
       root_6_index,
       full_index,
-      root_6
+      root_6,
+      root_7,
+      botton_index,
+      botton_base,
+      bot_base
     };
   },
 };
