@@ -15,6 +15,54 @@
 <img class="piaofu" src="../assets/img/fullness/full_zindex/grommet25离地单片.png" alt="" v-if="full_index_2 == 312">
 <img class="piaofu" src="../assets/img/fullness/full_zindex/grommet25离地双片.png" alt="" v-if="full_index_2 == 322"> -->
 
+<img class="piaofu"  v-if="kwang_done_c == 611" src="../assets/img/botton/show/rod10离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 621" src="../assets/img/botton/show/rod10离地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 711" src="../assets/img/botton/show/rod15离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 721" src="../assets/img/botton/show/rod15离地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 811" src="../assets/img/botton/show/rod20离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 821" src="../assets/img/botton/show/rod20离地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1111" src="../assets/img/botton/show/rod10贴地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1121" src="../assets/img/botton/show/rod10贴地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1211" src="../assets/img/botton/show/rod15贴地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1221" src="../assets/img/botton/show/rod15贴地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1311" src="../assets/img/botton/show/rod20贴地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1321" src="../assets/img/botton/show/rod20贴地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1611" src="../assets/img/botton/show/rod10拖地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1621" src="../assets/img/botton/show/rod10拖地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1711" src="../assets/img/botton/show/rod15拖地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1721" src="../assets/img/botton/show/rod15拖地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1811" src="../assets/img/botton/show/rod20拖地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1821" src="../assets/img/botton/show/rod20拖地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 612" src="../assets/img/botton/show/grommet15离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 622" src="../assets/img/botton/show/grommet15离地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 712" src="../assets/img/botton/show/grommet20离地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 722" src="../assets/img/botton/show/grommet20离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 812" src="../assets/img/botton/show/grommet25离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 822" src="../assets/img/botton/show/grommet25离地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1112" src="../assets/img/botton/show/grommet15贴地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1122" src="../assets/img/botton/show/grommet15贴地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1212" src="../assets/img/botton/show/grommet20贴地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1222" src="../assets/img/botton/show/grommet20贴地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1312" src="../assets/img/botton/show/grommet25贴地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1322" src="../assets/img/botton/show/grommet25贴地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1612" src="../assets/img/botton/show/grommet15拖地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1622" src="../assets/img/botton/show/grommet15拖地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1712" src="../assets/img/botton/show/grommet20拖地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1722" src="../assets/img/botton/show/grommet20拖地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1812" src="../assets/img/botton/show/grommet25拖地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1822" src="../assets/img/botton/show/grommet25拖地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 813" src="../assets/img/botton/show/pinch离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 823" src="../assets/img/botton/show/pinch离地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1313" src="../assets/img/botton/show/pinch贴地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1323" src="../assets/img/botton/show/pinch贴地双片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1813" src="../assets/img/botton/show/pinch拖地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 1823" src="../assets/img/botton/show/pinch拖地双片.png" alt="">
+
+
+
+
+
+
 
 
 <p class=" k_fuln_p1 k_center">Which finished look of curtain do you prefer?<br>
@@ -158,7 +206,8 @@ export default {
             document.querySelector('.fuln_r3').innerText = 'Easy cleaning \n Easy open and close \n Modern Style';
         let temp = getCookie('step6')
            kwang_done_c.value =  Number(temp)  + 500;
-           console.log(kwang_done_c.value,Number(temp))    
+           console.log(kwang_done_c.value,Number(temp))
+           document.cookie = `step7=${kwang_done_c.value}`;    
         });
         bot_div2.addEventListener("mouseenter",function(){
             const f1_style = document.querySelector('.root_1_header').innerText;
@@ -168,7 +217,8 @@ export default {
         let temp = getCookie('step6')
            
            kwang_done_c.value =  Number(temp)  + 1000;
-           console.log(kwang_done_c.value)    
+           console.log(kwang_done_c.value)
+           document.cookie = `step7=${kwang_done_c.value}`;        
         });
         bot_div3.addEventListener("mouseenter",function(){
             const f1_style = document.querySelector('.root_1_header').innerText;
@@ -179,6 +229,7 @@ export default {
            
            kwang_done_c.value =  Number(temp)  + 1500;
            console.log(kwang_done_c.value)    
+           document.cookie = `step7=${kwang_done_c.value}`;    
         });
         });
 
