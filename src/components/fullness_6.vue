@@ -26,10 +26,10 @@
      <div class="fuln_img_all">
          <div class="fuln_div fuln_div1" @click="full_c1()">
              
-             <img src="../assets/img/fullness/10离地单片.png" alt="" v-if="small_img == 'rod_single'">
-             <img src="../assets/img/fullness/10离地双片.png" alt="" v-if="small_img == 'rod_split'">
+            <img src="../assets/img/fullness/10离地单片.png" alt="" v-if="small_img == 'rod_single'">
+            <img src="../assets/img/fullness/10离地双片.png" alt="" v-if="small_img == 'rod_split'">
             <img src="../assets/img/fullness/15离地单片.png" alt="" v-if="small_img == 'gro_single'">
-             <img src="../assets/img/fullness/15离地双片.png" alt="" v-if="small_img == 'gro_split'">
+            <img src="../assets/img/fullness/15离地双片.png" alt="" v-if="small_img == 'gro_split'">
              <span class="fuln_span fuln_span1">1x  Fullness</span></div>
              <p class="myfulnshu"></p>
          <div class="fuln_div fuln_div2" @click="full_c2">
@@ -203,8 +203,10 @@ export default {
             }
         })
         onDeactivated(()=>{
-            console.log('shiqujihuo')
-            emit("botton_base","full_index_2")
+            console.log('shiqujihuo',full_index_2,full_index_2.value)
+            const temp = full_index_2.value;
+            document.cookie = `step6=${temp}`;
+            emit("botton_base","temp")
         })
         return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2,small_img}
     }

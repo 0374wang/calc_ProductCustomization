@@ -38,6 +38,31 @@ export default {
             document.cookie = 'cts_qty_c=2 panel';
             emit("panel_index","Split Panels")
         });
+        onDeactivated(()=>{
+        if(header.value == 'Pinch Pleat – Double'){
+            let panel_flag = document.querySelector('.panel_flag').innerText;
+                if(panel_flag == "Single Panel"){
+                    document.cookie = `step6=313`;
+                }
+                if(panel_flag == "Split Panels"){
+                    document.cookie = `step6=323`;
+                }        
+        
+        }
+            function getCookie(cookie) {
+        var allcookies = document.cookie;
+      var cookie_pos = allcookies.indexOf(cookie); 
+      if (cookie_pos != -1) {
+          cookie_pos += cookie.length + 1; 
+        var cookie_end = allcookies.indexOf(";", cookie_pos);
+        if (cookie_end == -1) {
+            cookie_end = allcookies.length;
+        }
+        var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+      }
+      return value;
+    }
+        })
         return {panel_one,panle_two,header,h_style}
     }
 }
