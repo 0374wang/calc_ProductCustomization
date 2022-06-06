@@ -140,7 +140,7 @@ export default {
         //     document.querySelector('.fuln_r3').innerText = 'Enriched with elegant pleats making large windows even more splendid. Not recommended for small windows due to too many pleats.Use 2.5 times fabric to cover the width.'
         //     }           
         // });
-
+        
         });
 
 
