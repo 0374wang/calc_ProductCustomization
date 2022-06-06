@@ -235,12 +235,15 @@ export default {
 
 
         const full_c1 = ()=>{
+            document.cookie = `botton_selected=1`;
             emit("botton_index",'1/2" Above Floor',"full_index_2.value")
         };
         const full_c2 = ()=>{
+            document.cookie = `botton_selected=2`;
             emit("botton_index","Kiss Floor")
         };
         const full_c3 = ()=>{
+            document.cookie = `botton_selected=3`;
             emit("botton_index",'2" Puddle')
         }
 
@@ -248,7 +251,22 @@ export default {
 
         console.log( getCookie('step6'),'77777777777777')
         alldone_.value = getCookie('step6');
+            let mouseenter = new Event('mouseenter');
+            if(getCookie('botton_selected') == 1){
+                let bot_div1 = document.querySelector('.bot_div1')
+                bot_div1.dispatchEvent(mouseenter);
+                console.log('chufale1111111111')
+            }
+            if(getCookie('botton_selected') == 2){
+                let bot_div2 = document.querySelector('.bot_div2')
+                bot_div2.dispatchEvent(mouseenter);
+            }
+            if(getCookie('botton_selected') == 3){
+                let bot_div3 = document.querySelector('.bot_div3')
+                bot_div3.dispatchEvent(mouseenter);
 
+                console.log('chufale111111111133333333')
+            }
         })
         return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2,small_img,kwang_done_c,alldone_,bot_small_img,getCookie}
 

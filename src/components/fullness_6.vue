@@ -70,63 +70,76 @@ export default {
         let root_1 = inject("root_1")
 
         let small_img = ref(null);
-
+        function getCookie(cookie) {
+        var allcookies = document.cookie;
+      var cookie_pos = allcookies.indexOf(cookie); 
+      if (cookie_pos != -1) {
+          cookie_pos += cookie.length + 1; 
+        var cookie_end = allcookies.indexOf(";", cookie_pos);
+        if (cookie_end == -1) {
+            cookie_end = allcookies.length;
+        }
+        var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+      }
+      return value;
+    }
         onMounted(()=>{
-        const fuln_div1 = document.querySelector('.fuln_div1')
-        const fuln_div2 = document.querySelector('.fuln_div2')
-        const fuln_div3 = document.querySelector('.fuln_div3')
-        fuln_div1.addEventListener("mouseenter",function(){
-            const f1_style = document.querySelector('.root_1_header').innerText
-            //
-            full_index_2.value = full_index_1.value +100;
-            console.log(full_index_2.value);
-            //
-            if(f1_style == "Rod Pocket"){
-                document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Original Choice'
-            document.querySelector('.fuln_r3').innerText = 'Get a flat sheet look when kept drawn in.Use original fabric to cover the width.'
-            }
-            if(f1_style == "Grommet"){
-                document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
-            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
-            }            
-        });
-        fuln_div2.addEventListener("mouseenter",function(){
-            const f1_style = document.querySelector('.root_1_header').innerText;
-            //
-            full_index_2.value = full_index_1.value +200;
-            console.log(full_index_2.value);
-            //
-            if(f1_style == "Rod Pocket"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
-            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
-            }
-            if(f1_style == "Grommet"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
-            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
-            }         
-        });
-        fuln_div3.addEventListener("mouseenter",function(){
-            const f1_style = document.querySelector('.root_1_header').innerText;
-            //
-            full_index_2.value = full_index_1.value +300;
-            console.log(full_index_2.value);
-            //
-            if(f1_style == "Rod Pocket"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
-            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
-            }
-            if(f1_style == "Grommet"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Luxury Choice'
-            document.querySelector('.fuln_r3').innerText = 'Enriched with elegant pleats making large windows even more splendid. Not recommended for small windows due to too many pleats.Use 2.5 times fabric to cover the width.'
-            }           
-        });
+        // const fuln_div1 = document.querySelector('.fuln_div1')
+        // const fuln_div2 = document.querySelector('.fuln_div2')
+        // const fuln_div3 = document.querySelector('.fuln_div3')
+        // fuln_div1.addEventListener("mouseenter",function(){
+        //     const f1_style = document.querySelector('.root_1_header').innerText
+        //     //
+        //     full_index_2.value = full_index_1.value +100;
+        //     console.log(full_index_2.value,'-----');
+        //     //
+        //     if(f1_style == "Rod Pocket"){
+        //         document.querySelector('.ful_dis').style.display = 'block';
+        //     document.querySelector('.fuln_r1').innerText = 'Original Choice'
+        //     document.querySelector('.fuln_r3').innerText = 'Get a flat sheet look when kept drawn in.Use original fabric to cover the width.'
+        //     }
+        //     if(f1_style == "Grommet"){
+        //         document.querySelector('.ful_dis').style.display = 'block';
+        //     document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+        //     document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+        //     }            
+        // });
+        // fuln_div2.addEventListener("mouseenter",function(){
+        //     const f1_style = document.querySelector('.root_1_header').innerText;
+        //     //
+        //     full_index_2.value = full_index_1.value +200;
+        //     console.log(full_index_2.value,'-----');
 
+        //     //
+        //     if(f1_style == "Rod Pocket"){
+        //     document.querySelector('.ful_dis').style.display = 'block';
+        //     document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+        //     document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+        //     }
+        //     if(f1_style == "Grommet"){
+        //     document.querySelector('.ful_dis').style.display = 'block';
+        //     document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+        //     document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+        //     }         
+        // });
+        // fuln_div3.addEventListener("mouseenter",function(){
+        //     const f1_style = document.querySelector('.root_1_header').innerText;
+        //     //
+        //     full_index_2.value = full_index_1.value +300;
+        //     console.log(full_index_2.value,'-----');
+
+        //     //
+        //     if(f1_style == "Rod Pocket"){
+        //     document.querySelector('.ful_dis').style.display = 'block';
+        //     document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+        //     document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+        //     }
+        //     if(f1_style == "Grommet"){
+        //     document.querySelector('.ful_dis').style.display = 'block';
+        //     document.querySelector('.fuln_r1').innerText = 'Luxury Choice'
+        //     document.querySelector('.fuln_r3').innerText = 'Enriched with elegant pleats making large windows even more splendid. Not recommended for small windows due to too many pleats.Use 2.5 times fabric to cover the width.'
+        //     }           
+        // });
 
         });
 
@@ -137,21 +150,46 @@ export default {
         const full_c1 = ()=>{
             full_index_2.value = full_index_1.value +100;
             console.log(full_index_1.value);
-            emit("full_index","1x Fullness",full_index_2.value)
+            document.cookie = `fullness_selected=1`;
+            const f1_style = document.querySelector('.root_1_header').innerText;
+            if(f1_style == "Rod Pocket"){
+                emit("full_index","1x Fullness",full_index_2.value)
+            }
+            if(f1_style == "Grommet"){
+                emit("full_index","1.5x Fullness",full_index_2.value)
+            }
         };
         const full_c2 = ()=>{
             full_index_2.value = full_index_1.value +200;
             console.log(full_index_2.value);
-            emit("full_index","1.5x Fullness")
+            document.cookie = `fullness_selected=2`;
+            const f1_style = document.querySelector('.root_1_header').innerText;
+            if(f1_style == "Rod Pocket"){
+                emit("full_index","1.5x Fullness")
+            }
+            if(f1_style == "Grommet"){
+                emit("full_index","2x Fullness")
+            }
         };
         const full_c3 = ()=>{
             full_index_2.value = full_index_1.value +300;
             console.log(full_index_2.value);
-            emit("full_index","2x Fullness")
+            document.cookie = `fullness_selected=3`;
+            const f1_style = document.querySelector('.root_1_header').innerText;
+            if(f1_style == "Rod Pocket"){
+                emit("full_index","2x Fullness")
+            }
+            if(f1_style == "Grommet"){
+                emit("full_index","2.5x Fullness")
+            }
         }
 
         onActivated(()=>{
-            console.log('jihuole')
+            /****
+             * 
+             */
+
+            
         let f1_style = document.querySelector('.root_1_header').innerText
         if(f1_style == "Grommet"){
            document.querySelector('.fuln_span1').innerText = '1.5x  Fullness'
@@ -201,6 +239,88 @@ export default {
                     small_img.value = "gro_split"
                 }
             }
+
+            /***
+             * 
+             */
+        const fuln_div1 = document.querySelector('.fuln_div1')
+        const fuln_div2 = document.querySelector('.fuln_div2')
+        const fuln_div3 = document.querySelector('.fuln_div3')
+        fuln_div1.addEventListener("mouseenter",function(){
+            const f1_style = document.querySelector('.root_1_header').innerText
+            //
+            full_index_2.value = full_index_1.value +100;
+            console.log(full_index_2.value,'-----');
+            //
+            if(f1_style == "Rod Pocket"){
+                document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Original Choice'
+            document.querySelector('.fuln_r3').innerText = 'Get a flat sheet look when kept drawn in.Use original fabric to cover the width.'
+            }
+            if(f1_style == "Grommet"){
+                document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+            }            
+        });
+        fuln_div2.addEventListener("mouseenter",function(){
+            const f1_style = document.querySelector('.root_1_header').innerText;
+            //
+            full_index_2.value = full_index_1.value +200;
+            console.log(full_index_2.value,'-----');
+
+            //
+            if(f1_style == "Rod Pocket"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+            }
+            if(f1_style == "Grommet"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+            }         
+        });
+        fuln_div3.addEventListener("mouseenter",function(){
+            const f1_style = document.querySelector('.root_1_header').innerText;
+            //
+            full_index_2.value = full_index_1.value +300;
+            console.log(full_index_2.value,'-----');
+
+            //
+            if(f1_style == "Rod Pocket"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+            }
+            if(f1_style == "Grommet"){
+            document.querySelector('.ful_dis').style.display = 'block';
+            document.querySelector('.fuln_r1').innerText = 'Luxury Choice'
+            document.querySelector('.fuln_r3').innerText = 'Enriched with elegant pleats making large windows even more splendid. Not recommended for small windows due to too many pleats.Use 2.5 times fabric to cover the width.'
+            }           
+        });
+
+
+            console.log('jihuole')
+            let mouseenter = new Event('mouseenter');
+            if(getCookie('fullness_selected') == 1){
+                let fuln_div1 = document.querySelector('.fuln_div1')
+                fuln_div1.dispatchEvent(mouseenter);
+                console.log('chufale1111111111')
+            }
+            if(getCookie('fullness_selected') == 2){
+                let fuln_div2 = document.querySelector('.fuln_div2')
+                fuln_div2.dispatchEvent(mouseenter);
+            }
+            if(getCookie('fullness_selected') == 3){
+                let fuln_div3 = document.querySelector('.fuln_div3')
+                fuln_div3.dispatchEvent(mouseenter);
+
+                console.log('chufale111111111133333333')
+            }
+
+
+
         })
         onDeactivated(()=>{
             console.log('shiqujihuo',full_index_2,full_index_2.value)
@@ -208,7 +328,7 @@ export default {
             document.cookie = `step6=${temp}`;
             emit("botton_base","temp")
         })
-        return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2,small_img}
+        return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2,small_img,getCookie}
     }
 }
 </script>
