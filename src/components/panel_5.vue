@@ -74,7 +74,9 @@ export default {
                 console.log('此时有7');
                 //此时已经选择过了step6
                 //把默认的三张选择单双图隐藏掉
-                document.querySelector('.had_dis').style.display = 'none';
+                if(document.querySelector('.had_dis')){
+                    document.querySelector('.had_dis').style.display = 'none';
+                }
                 had_7.value = getCookie('step7')
                 console.log(had_7.value)
             }else{

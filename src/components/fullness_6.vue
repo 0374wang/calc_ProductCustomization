@@ -19,6 +19,55 @@
 <!-- <img src="../assets/img/fullness/full_zindex/pinch离地单片.png" alt="">
 <img src="../assets/img/fullness/full_zindex/pinch离地双片.png" alt=""> -->
 
+
+
+
+<!-- 二次选择 -->
+<img class="piaofu"  v-if="had_9 == 611" src="../assets/img/botton/show/rod10离地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 621" src="../assets/img/botton/show/rod10离地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 711" src="../assets/img/botton/show/rod15离地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 721" src="../assets/img/botton/show/rod15离地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 811" src="../assets/img/botton/show/rod20离地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 821" src="../assets/img/botton/show/rod20离地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1111" src="../assets/img/botton/show/rod10贴地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1121" src="../assets/img/botton/show/rod10贴地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1211" src="../assets/img/botton/show/rod15贴地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1221" src="../assets/img/botton/show/rod15贴地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1311" src="../assets/img/botton/show/rod20贴地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1321" src="../assets/img/botton/show/rod20贴地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1611" src="../assets/img/botton/show/rod10拖地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1621" src="../assets/img/botton/show/rod10拖地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1711" src="../assets/img/botton/show/rod15拖地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1721" src="../assets/img/botton/show/rod15拖地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1811" src="../assets/img/botton/show/rod20拖地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1821" src="../assets/img/botton/show/rod20拖地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 612" src="../assets/img/botton/show/grommet15离地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 622" src="../assets/img/botton/show/grommet15离地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 712" src="../assets/img/botton/show/grommet20离地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 722" src="../assets/img/botton/show/grommet20离地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 812" src="../assets/img/botton/show/grommet25离地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 822" src="../assets/img/botton/show/grommet25离地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1112" src="../assets/img/botton/show/grommet15贴地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1122" src="../assets/img/botton/show/grommet15贴地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1212" src="../assets/img/botton/show/grommet20贴地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1222" src="../assets/img/botton/show/grommet20贴地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1312" src="../assets/img/botton/show/grommet25贴地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1322" src="../assets/img/botton/show/grommet25贴地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1612" src="../assets/img/botton/show/grommet15拖地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1622" src="../assets/img/botton/show/grommet15拖地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1712" src="../assets/img/botton/show/grommet20拖地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1722" src="../assets/img/botton/show/grommet20拖地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1812" src="../assets/img/botton/show/grommet25拖地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1822" src="../assets/img/botton/show/grommet25拖地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 813" src="../assets/img/botton/show/pinch离地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 823" src="../assets/img/botton/show/pinch离地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1313" src="../assets/img/botton/show/pinch贴地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1323" src="../assets/img/botton/show/pinch贴地双片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1813" src="../assets/img/botton/show/pinch拖地单片.png" alt="">
+<img class="piaofu"  v-if="had_9 == 1823" src="../assets/img/botton/show/pinch拖地双片.png" alt="">
+
+
+
 <p class=" k_fuln_p1 k_center">Which finished look of curtain do you prefer?<br>
  Choose fullness based on that.</p>
 
@@ -68,7 +117,8 @@ export default {
         //判断 头部样式 + 单双 + 丰满度
         var full_index_2 = ref(null)
         let root_1 = inject("root_1")
-
+        var had_8 = ref(null)
+        var had_9 = ref(null)
         let small_img = ref(null);
         function getCookie(cookie) {
         var allcookies = document.cookie;
@@ -141,6 +191,8 @@ export default {
         //     }           
         // });
         
+
+
         });
 
 
@@ -188,7 +240,6 @@ export default {
             /****
              * 
              */
-
             
         let f1_style = document.querySelector('.root_1_header').innerText
         if(f1_style == "Grommet"){
@@ -246,61 +297,137 @@ export default {
         const fuln_div1 = document.querySelector('.fuln_div1')
         const fuln_div2 = document.querySelector('.fuln_div2')
         const fuln_div3 = document.querySelector('.fuln_div3')
-        fuln_div1.addEventListener("mouseenter",function(){
-            const f1_style = document.querySelector('.root_1_header').innerText
-            //
-            full_index_2.value = full_index_1.value +100;
-            console.log(full_index_2.value,'-----');
-            //
-            if(f1_style == "Rod Pocket"){
-                document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Original Choice'
-            document.querySelector('.fuln_r3').innerText = 'Get a flat sheet look when kept drawn in.Use original fabric to cover the width.'
-            }
-            if(f1_style == "Grommet"){
-                document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
-            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
-            }            
-        });
-        fuln_div2.addEventListener("mouseenter",function(){
-            const f1_style = document.querySelector('.root_1_header').innerText;
-            //
-            full_index_2.value = full_index_1.value +200;
-            console.log(full_index_2.value,'-----');
 
-            //
-            if(f1_style == "Rod Pocket"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Budget Choice'
-            document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
-            }
-            if(f1_style == "Grommet"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
-            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
-            }         
-        });
-        fuln_div3.addEventListener("mouseenter",function(){
-            const f1_style = document.querySelector('.root_1_header').innerText;
-            //
-            full_index_2.value = full_index_1.value +300;
-            console.log(full_index_2.value,'-----');
+        // 判断是否有step7 的cookie，如果有说明处于二次选择，二次选择则加上botton的值
 
-            //
-            if(f1_style == "Rod Pocket"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
-            document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
-            }
-            if(f1_style == "Grommet"){
-            document.querySelector('.ful_dis').style.display = 'block';
-            document.querySelector('.fuln_r1').innerText = 'Luxury Choice'
-            document.querySelector('.fuln_r3').innerText = 'Enriched with elegant pleats making large windows even more splendid. Not recommended for small windows due to too many pleats.Use 2.5 times fabric to cover the width.'
-            }           
-        });
+        // 
+        var selectionFlag = false;
+        if(document.querySelector('.fullness_pin').innerText){
+            
+            selectionFlag = true;
+            full_index_2.value = 0;
+
+                if(document.querySelector('.root_1_header').innerText == "Grommet"){
+                    console.log('grommet-----------')
+                    if (document.querySelector('.fullness_pin').innerText == '1.5x  Fullness') {
+                        let temp = getCookie('step7')
+                        had_8.value = Number(temp) - 100;
+                        console.log('已获取cookie',temp,had_8.value)
+                    }
+                    if (document.querySelector('.fullness_pin').innerText == '2x Fullness') {
+                        let temp = getCookie('step7')
+                        had_8.value = Number(temp) - 200;
+                        console.log('已获取cookie',temp,had_8.value)
+                    }
+                    if (document.querySelector('.fullness_pin').innerText == '2.5x Fullness') {
+                        let temp = getCookie('step7')
+                        had_8.value = Number(temp) - 300;
+                        console.log('已获取cookie',temp,had_8.value)
+                    }
+                }
+
+                if(document.querySelector('.root_1_header').innerText == "Rod Pocket"){
+                    console.log('rod--------------')
+                    if (document.querySelector('.fullness_pin').innerText == '1x  Fullness') {
+                        let temp = getCookie('step7')
+                        had_8.value = Number(temp) - 100;
+                        console.log('已获取cookie',temp,had_8.value)
+                    }
+                    if (document.querySelector('.fullness_pin').innerText == '1.5x Fullness') {
+                        let temp = getCookie('step7')
+                        had_8.value = Number(temp) - 200;
+                        console.log('已获取cookie',temp,had_8.value)
+                    }
+                    if (document.querySelector('.fullness_pin').innerText == '2x Fullness') {
+                        let temp = getCookie('step7')
+                        had_8.value = Number(temp) - 300;
+                        console.log('已获取cookie',temp,had_8.value)
+                    }
+                }
+            
+                //此时二次选择，使用第二套监听，根据step7的值，减去当前丰满度的值，让用户自己选丰满度的值
+
+                }else{
+                    selectionFlag = false;
+                }
+                    fuln_div1.addEventListener("mouseenter",function(){
+                        const f1_style = document.querySelector('.root_1_header').innerText
+                        //
+                        if(selectionFlag){
+                            //二次选择
+                            had_9.value = had_8.value + 100;
+                            console.log('执行了had9')
+                        }else{
+                            full_index_2.value = full_index_1.value +100;
+                            console.log('执行了full————2')
+                        }
+                        console.log(full_index_2.value,'-----');
+                        console.log(had_9.value,'-----++++',had_8.value);
+                        //
+                        if(f1_style == "Rod Pocket"){
+                        document.querySelector('.ful_dis').style.display = 'block';
+                        document.querySelector('.fuln_r1').innerText = 'Original Choice'
+                        document.querySelector('.fuln_r3').innerText = 'Get a flat sheet look when kept drawn in.Use original fabric to cover the width.'
+                        }
+                        if(f1_style == "Grommet"){
+                        document.querySelector('.ful_dis').style.display = 'block';
+                        document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+                        document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+                        }            
+                    });
+                    fuln_div2.addEventListener("mouseenter",function(){
+                        const f1_style = document.querySelector('.root_1_header').innerText;
+                        //
+                        if(selectionFlag){
+                            had_9.value = had_8.value + 200;
+                            console.log('执行了had9')
+                        }else{
+                            full_index_2.value = full_index_1.value +200;
+                            console.log('执行了full————2')
+                        }
+                        console.log(full_index_2.value,'-----');
+                        console.log(had_9.value,'-----++++',had_8.value);
+
+                        //
+                        if(f1_style == "Rod Pocket"){
+                        document.querySelector('.ful_dis').style.display = 'block';
+                        document.querySelector('.fuln_r1').innerText = 'Budget Choice'
+                        document.querySelector('.fuln_r3').innerText = 'Not recommended for windows beyond 50"width to avoid drapes looking flat.Using 1.5 times fabric across the width.'
+                        }
+                        if(f1_style == "Grommet"){
+                        document.querySelector('.ful_dis').style.display = 'block';
+                        document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+                        document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+                        }         
+                    });
+                    fuln_div3.addEventListener("mouseenter",function(){
+                        const f1_style = document.querySelector('.root_1_header').innerText;
+                        //
+                        if(selectionFlag){ 
+                            had_9.value = had_8.value + 300;
+                            console.log('执行了had9')
+                        }else{
+                            full_index_2.value = full_index_1.value +300;
+                            console.log('执行了full————2')
+                        }
+                        console.log(full_index_2.value,'-----');
+                        console.log(had_9.value,'-----++++',had_8.value);
+
+                        //
+                        if(f1_style == "Rod Pocket"){
+                        document.querySelector('.ful_dis').style.display = 'block';
+                        document.querySelector('.fuln_r1').innerText = 'Recommended Choice'
+                        document.querySelector('.fuln_r3').innerText = 'Nicely gathered with soft pleats on top.2x Fullness strongly recommended.Using 2 times fabric across the width.'
+                        }
+                        if(f1_style == "Grommet"){
+                        document.querySelector('.ful_dis').style.display = 'block';
+                        document.querySelector('.fuln_r1').innerText = 'Luxury Choice'
+                        document.querySelector('.fuln_r3').innerText = 'Enriched with elegant pleats making large windows even more splendid. Not recommended for small windows due to too many pleats.Use 2.5 times fabric to cover the width.'
+                        }           
+                    });
 
 
+            //判断是否已经点击过三个选项，如果点击过，则每次激活该组件自动触发事件
             console.log('jihuole')
             let mouseenter = new Event('mouseenter');
             if(getCookie('fullness_selected') == 1){
@@ -315,11 +442,8 @@ export default {
             if(getCookie('fullness_selected') == 3){
                 let fuln_div3 = document.querySelector('.fuln_div3')
                 fuln_div3.dispatchEvent(mouseenter);
-
                 console.log('chufale111111111133333333')
             }
-
-
 
         })
         onDeactivated(()=>{
@@ -328,7 +452,7 @@ export default {
             document.cookie = `step6=${temp}`;
             emit("botton_base","temp")
         })
-        return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2,small_img,getCookie}
+        return {full_index,full_c1,full_c2,full_c3,full_index_1,full_index_2,small_img,getCookie,had_8,had_9}
     }
 }
 </script>
