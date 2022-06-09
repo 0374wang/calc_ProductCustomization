@@ -1,7 +1,7 @@
 <template>
   <img src="../assets/img/fullness/fullness_1.png" alt="" />
   <p class="k_fuln_p1 k_center">All done</p>
-    <img class="piaofu"  v-if="kwang_done_c == 611" src="../assets/img/botton/show/rod10离地单片.png" alt="">
+<img class="piaofu"  v-if="kwang_done_c == 611" src="../assets/img/botton/show/rod10离地单片.png" alt="">
 <img class="piaofu"  v-if="kwang_done_c == 621" src="../assets/img/botton/show/rod10离地双片.png" alt="">
 <img class="piaofu"  v-if="kwang_done_c == 711" src="../assets/img/botton/show/rod15离地单片.png" alt="">
 <img class="piaofu"  v-if="kwang_done_c == 721" src="../assets/img/botton/show/rod15离地双片.png" alt="">
@@ -89,7 +89,6 @@ export default {
       document.querySelector(".ald_d3").innerText = getCookie("cts_qty_c");
       let temp = getCookie("step7");
       kwang_done_c.value = Number(temp);
-      console.log('444444444', kwang_done_c.value, temp);
     });
     function recalc() {
       location.reload();

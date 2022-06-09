@@ -125,10 +125,18 @@
       <panel v-if="index === 5" @panel_index="panel_index"></panel>
     </keep-alive>
     <keep-alive>
-      <fullness v-if="index === 6" @full_index="full_index" @botton_base="botton_base"></fullness>
+      <fullness
+        v-if="index === 6"
+        @full_index="full_index"
+        @botton_base="botton_base"
+      ></fullness>
     </keep-alive>
     <keep-alive>
-      <botton v-if="index === 7" :bot_base="bot_base" @botton_index="botton_index" ></botton>
+      <botton
+        v-if="index === 7"
+        :bot_base="bot_base"
+        @botton_index="botton_index"
+      ></botton>
     </keep-alive>
     <keep-alive>
       <alldone v-if="index === 8"></alldone>
@@ -170,12 +178,10 @@ export default {
     const root_5 = ref(null);
     const root_6 = ref(null);
     const root_7 = ref(null);
-    let bot_base = ref(null)
+    let bot_base = ref(null);
     var noRod = ref(11);
 
-
-
-    const myprov = provide("kwang",6)
+    const myprov = provide("kwang", 6);
     onMounted(() => {
       window.onresize = function () {
         var hrwid =
@@ -186,8 +192,8 @@ export default {
     });
     function myBack() {
       //判断若果是pinch头部，跳过fullness
-      if(index.value == 7){
-        if(root_1.value.innerText == 'Pinch Pleat – Double'){
+      if (index.value == 7) {
+        if (root_1.value.innerText == "Pinch Pleat – Double") {
           index.value--;
         }
       }
@@ -203,24 +209,19 @@ export default {
       return header;
     };
     // 把step1的header样式传给step5,提供给step5显示不同的头部来选择单双
-      var header = ref(0);
-      provide("header",header)
-      provide("root_1",root_1)
-
-
+    var header = ref(0);
+    provide("header", header);
+    provide("root_1", root_1);
 
     const rod_index = function (a) {
       root_2.value.textContent = a;
       if (a == "YES") {
-        console.log("此时有杆");
         noRod.value = 11;
       }
       if (a == "NO") {
-        console.log("无");
         noRod.value = 12;
       }
       index.value++;
-      console.log(noRod);
       return noRod;
     };
     const width_index = function (a) {
@@ -234,35 +235,39 @@ export default {
     const panel_index = function (a) {
       root_5.value.textContent = a;
       //判断若果是pinch头部，跳过fullness
-      if(root_1.value.innerText == 'Pinch Pleat – Double'){
+      if (root_1.value.innerText == "Pinch Pleat – Double") {
         index.value++;
-        document.querySelector('.fullness_pin').innerText = '2x Fullness'
+        document.querySelector(".fullness_pin").innerText = "2x Fullness";
       }
       index.value++;
     };
-    const root_6_index = function(){
-      if(document.querySelector('.root_1_header').innerText == 'Pinch Pleat – Double'){
-        if(index.value == 7 ){
-          index.value--;index.value--;
+    const root_6_index = function () {
+      if (
+        document.querySelector(".root_1_header").innerText ==
+        "Pinch Pleat – Double"
+      ) {
+        if (index.value == 7) {
+          index.value--;
+          index.value--;
         }
-      }else{
-        index.value =6;
+      } else {
+        index.value = 6;
       }
     };
-    const full_index = function(a,b){
+    const full_index = function (a, b) {
       root_6.value.textContent = a;
       bot_base.value = b;
-      console.log(bot_base.value,'/*-------')
+      console.log(bot_base.value, "/*-------");
       index.value++;
-    }
-    const botton_index = function(a){
+    };
+    const botton_index = function (a) {
       root_7.value.textContent = a;
       index.value++;
-    }
-    const botton_base = function(a){
+    };
+    const botton_base = function (a) {
       bot_base.value = a;
-      console.log(bot_base.value)
-    }
+      console.log(bot_base.value);
+    };
     return {
       index,
       myBack,
@@ -274,7 +279,7 @@ export default {
       root_3,
       length_index,
       root_4,
-      panel_index, 
+      panel_index,
       root_5,
       noRod,
       header,
@@ -284,7 +289,7 @@ export default {
       root_7,
       botton_index,
       botton_base,
-      bot_base
+      bot_base,
     };
   },
 };
@@ -294,28 +299,35 @@ export default {
 .k_all {
   position: relative;
 }
+
 .kwang_step_a {
   background-color: #d6d1ca;
 }
+
 .kwang_step_ul {
   margin: 0 260px;
   margin-top: 30px;
 }
+
 .k_step_active {
   border: 2px solid #333333 !important;
 }
+
 .active_fc {
   color: #333333 !important;
 }
+
 .kconpp {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, -50px);
+
   a {
     color: #fff;
   }
 }
+
 .myBack {
   position: absolute;
   font-family: "Inter";
@@ -417,6 +429,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -431,17 +444,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -449,6 +466,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

@@ -48,24 +48,43 @@ export default {
     const style1 = ref(null);
     const style2 = ref(null);
     const style3 = ref(null);
+    function getCookie(cookie) {
+                 var allcookies = document.cookie;
+                 var cookie_pos = allcookies.indexOf(cookie); 
+                 if (cookie_pos != -1) {
+                     cookie_pos += cookie.length + 1; 
+                   var cookie_end = allcookies.indexOf(";", cookie_pos);
+                   if (cookie_end == -1) {
+                       cookie_end = allcookies.length;
+                   }
+                   var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+                 }
+                 return value;
+        }
 
     const style_index1 = function () {
-      //   console.log(document.querySelector(".k_step_d.active_fc").textContent);
+      if(getCookie('cts_header_c')){
+        document.cookie = `header_had=${getCookie('cts_header_c')}`;
+      }
       document.cookie = `cts_header_c=Rod Pocket`;
-      // docCookies.setItem
-      // document.cookie.setItem
       emit("style_index", style1.value.textContent);
     };
     const style_index2 = function () {
+      if(getCookie('cts_header_c')){
+        document.cookie = `header_had=${getCookie('cts_header_c')}`;
+      }
       document.cookie = `cts_header_c=Grommet`;
       emit("style_index", style2.value.textContent);
     };
     const style_index3 = function () {
+      if(getCookie('cts_header_c')){
+        document.cookie = `header_had=${getCookie('cts_header_c')}`;
+      }
       document.cookie = `cts_header_c=Pinch Pleat – Double`;
       emit("style_index", style3.value.textContent);
     };
 
-    return { style_index1, style_index2, style_index3, style1, style2, style3 };
+    return { style_index1, style_index2, style_index3, style1, style2, style3 ,getCookie };
   },
 };
 </script>

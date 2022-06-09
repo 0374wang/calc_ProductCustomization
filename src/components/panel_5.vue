@@ -67,8 +67,10 @@ export default {
               var expires = "expires="+d.toGMTString();
               document.cookie = cname + "=" + cvalue + "; " + expires;
         }
+
+
+
         onActivated(()=>{
-            console.log(header.value)
 
             if(getCookie('step7')){
                 console.log('此时有7');
@@ -77,12 +79,84 @@ export default {
                 if(document.querySelector('.had_dis')){
                     document.querySelector('.had_dis').style.display = 'none';
                 }
-                had_7.value = getCookie('step7')
+                    //如果是二次选择，那么判断之前的头部样式，把setp7 的值减去对应头部样式的差值
+                if(getCookie('header_had')){
+                    //第二次选择更换了头部
+                    switch(getCookie('header_had')){
+                        //第一次是rod，第二次再选
+                        case 'Rod Pocket':
+                            console.log('执行了二次选头部的switch')
+                            if(document.querySelector('p.root_1_header').innerText == 'Rod Pocket'){
+                                had_7.value = getCookie('step7')
+                                document.cookie = 'header_had=';
+                            }
+                            if(document.querySelector('p.root_1_header').innerText == 'Grommet'){
+                                // let temp = 1;
+                                had_7.value = Number(getCookie('step7')) + 1;
+                                document.cookie = 'header_had=';
+                            console.log('执行了二次选头部的switch-----',had_7.value,Number(getCookie('step7')))
+
+                            }
+                            if(document.querySelector('p.root_1_header').innerText == 'Pinch Pleat – Double'){
+                                // let temp = 2;
+                                had_7.value = Number(getCookie('step7')) + 2;
+                                document.cookie = 'header_had=';
+                            console.log('执行了二次选头部的switch-----',had_7.value)
+
+                            }
+                            break;
+                        case 'Grommet':
+                            if(document.querySelector('p.root_1_header').innerText == 'Grommet'){
+                                had_7.value = getCookie('step7')
+                                document.cookie = 'header_had=';
+                            }
+                            if(document.querySelector('p.root_1_header').innerText == 'Rod Pocket'){
+                                // let temp = 1;
+                                had_7.value = Number(getCookie('step7')) - 1;
+                                document.cookie = 'header_had=';
+                            console.log('执行了二次选头部的switch-----',had_7.value)
+
+                            }
+                            if(document.querySelector('p.root_1_header').innerText == 'Pinch Pleat – Double'){
+                                // let temp = 2;
+                                had_7.value = Number(getCookie('step7')) - 2;
+                                document.cookie = 'header_had=';
+                            console.log('执行了二次选头部的switch-----',had_7.value)
+
+                            }
+                            
+                            break;
+                        case 'Pinch Pleat – Double':
+                            if(document.querySelector('p.root_1_header').innerText == 'Pinch Pleat – Double'){
+                                had_7.value = getCookie('step7')
+                                document.cookie = 'header_had=';
+                            }
+                            if(document.querySelector('p.root_1_header').innerText == 'Grommet'){
+                                // let temp = 1;
+                                had_7.value = Number(getCookie('step7')) - 1;
+                                document.cookie = 'header_had=';
+                            console.log('执行了二次选头部的switch-----',had_7.value)
+
+                            }
+                            if(document.querySelector('p.root_1_header').innerText == 'Rod Pocket'){
+                                // let temp = 2;
+                                had_7.value = Number(getCookie('step7')) - 2;
+                                document.cookie = 'header_had=';
+                            console.log('执行了二次选头部的switch-----',had_7.value)
+
+                            }
+                            break;
+                    }
+                
+                }else{
+                    had_7.value = getCookie('step7')
                 console.log(had_7.value)
+
+                }
+
             }else{
                 console.log('此时无7')
             }
-
 
         if(header.value == 'Pinch Pleat – Double'){
             h_style.value = 'pin'
@@ -93,14 +167,20 @@ export default {
         if(header.value == 'Rod Pocket'){
             h_style.value = 'rod'
         }
-        
         })
 
         const panel_one = ()=>{
+            if (getCookie('cts_qty_c')) {
+                document.cookie = 'c_changed=yes';
+            }
             document.cookie = 'cts_qty_c=1 panel';
             emit("panel_index","Single Panel")
         };
         const panle_two = (() =>{
+            //判断是否已经选过了单双，如果选过了，在总值的和上减去单双的变化
+            if (getCookie('cts_qty_c')) {
+                document.cookie = 'c_changed=yes';
+            }
             document.cookie = 'cts_qty_c=2 panel';
             emit("panel_index","Split Panels")
         });
@@ -111,11 +191,9 @@ export default {
                         document.cookie = `step6=313`;
                     }
                     if(panel_flag == "Split Panels"){
-                        document.cookie = `step6=323`;
-                    }        
-
+                        document.cookie = `step6=323`; 
+                    }
             }   
-        
         })
         return {panel_one,panle_two,header,h_style,getCookie,had_7}
     }
