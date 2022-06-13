@@ -3,11 +3,10 @@
     <!-- 步骤调转 -->
     <section class="kwang_step_a" style="position: relative">
       <ul class="kwang_step_ul">
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 1 == index }">
+        <li class="k_step_li" @click="index = 1">
+          <div class="k_step_u" :class="{ 'k_step_active': 1 == index , 'k_step_done': 1 < index}" >
             <span
               class="hrleft"
-              @click="index = 1"
               :class="{ active_fc: 1 == index }"
             >
               1</span
@@ -16,9 +15,9 @@
           <div class="k_step_d" :class="{ active_fc: 1 == index }">Style</div>
           <p ref="root_1" class="root_1_header"></p>
         </li>
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 2 == index }">
-            <span @click="index = 2" :class="{ active_fc: 2 == index }">
+        <li class="k_step_li" @click="index = 2">
+          <div class="k_step_u" :class="{ k_step_active: 2 == index , 'k_step_done': 2 < index}">
+            <span  :class="{ active_fc: 2 == index }">
               2</span
             >
           </div>
@@ -27,9 +26,9 @@
           </div>
           <p ref="root_2"></p>
         </li>
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 3 == index }">
-            <span @click="index = 3" :class="{ active_fc: 3 == index }">
+        <li class="k_step_li" @click="index = 3">
+          <div class="k_step_u" :class="{ k_step_active: 3 == index , 'k_step_done': 3 < index}">
+            <span  :class="{ active_fc: 3 == index }">
               3</span
             >
           </div>
@@ -38,9 +37,9 @@
           </div>
           <p ref="root_3"></p>
         </li>
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 4 == index }">
-            <span @click="index = 4" :class="{ active_fc: 4 == index }">
+        <li class="k_step_li" @click="index = 4">
+          <div class="k_step_u" :class="{ k_step_active: 4 == index , 'k_step_done': 4 < index}">
+            <span  :class="{ active_fc: 4 == index }">
               4</span
             >
           </div>
@@ -49,18 +48,18 @@
           </div>
           <p ref="root_4"></p>
         </li>
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 5 == index }">
-            <span @click="index = 5" :class="{ active_fc: 5 == index }">
+        <li class="k_step_li" @click="index = 5">
+          <div class="k_step_u" :class="{ k_step_active: 5 == index ,'k_step_done': 5 < index}">
+            <span  :class="{ active_fc: 5 == index }">
               5</span
             >
           </div>
           <div class="k_step_d" :class="{ active_fc: 5 == index }">Panels</div>
           <p ref="root_5" class="panel_flag"></p>
         </li>
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 6 == index }">
-            <span @click="root_6_index" :class="{ active_fc: 6 == index }">
+        <li class="k_step_li" @click="root_6_index">
+          <div class="k_step_u" :class="{ k_step_active: 6 == index ,'k_step_done': 6 < index}">
+            <span  :class="{ active_fc: 6 == index }">
               6</span
             >
           </div>
@@ -69,20 +68,19 @@
           </div>
           <p class="fullness_pin" ref="root_6"></p>
         </li>
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 7 == index }">
-            <span @click="index = 7" :class="{ active_fc: 7 == index }">
+        <li class="k_step_li" @click="index = 7">
+          <div class="k_step_u" :class="{ k_step_active: 7 == index ,'k_step_done': 7 < index}">
+            <span  :class="{ active_fc: 7 == index }">
               7</span
             >
           </div>
           <div class="k_step_d" :class="{ active_fc: 7 == index }">Botton</div>
           <p ref="root_7"></p>
         </li>
-        <li class="k_step_li">
-          <div class="k_step_u" :class="{ k_step_active: 8 == index }">
+        <li class="k_step_li" @click="index = 8">
+          <div class="k_step_u" :class="{ k_step_active: 8 == index ,'k_step_done': 8 <= index}">
             <span
               class="hrright"
-              @click="index = 8"
               :class="{ active_fc: 8 == index }"
             >
               8</span
@@ -99,7 +97,7 @@
 
     <!-- 返回 -->
     <p class="myBack" @click="myBack()">＜ PREVIOUS</p>
-
+<transition name="why" mode="out-in">
     <keep-alive>
       <style1
         v-if="index === 1"
@@ -107,40 +105,60 @@
         @style_index="style_index"
       ></style1>
     </keep-alive>
+</transition>
+
+<transition name="why1" mode="out-in">
+  <div>
+    <rod2 v-if="index === 2" @rod_index="rod_index"></rod2>
+  </div>
+</transition>
+
+<transition name="why" mode="out-in">
+  <div>
     <keep-alive>
-      <rod2 v-if="index === 2" @rod_index="rod_index"></rod2>
+      <width v-model="noRod" v-if="index === 3" @width_index="width_index"></width>
     </keep-alive>
-    <keep-alive>
-      <width v-model="noRod" v-if="index === 3" @width_index="width_index">
-      </width>
-    </keep-alive>
-    <keep-alive>
-      <length
-        v-model="noRod"
-        v-if="index === 4"
-        @length_index="length_index"
-      ></length>
-    </keep-alive>
-    <keep-alive>
-      <panel v-if="index === 5" @panel_index="panel_index"></panel>
-    </keep-alive>
-    <keep-alive>
-      <fullness
-        v-if="index === 6"
-        @full_index="full_index"
-        @botton_base="botton_base"
-      ></fullness>
-    </keep-alive>
-    <keep-alive>
-      <botton
-        v-if="index === 7"
-        :bot_base="bot_base"
-        @botton_index="botton_index"
-      ></botton>
-    </keep-alive>
-    <keep-alive>
-      <alldone v-if="index === 8"></alldone>
-    </keep-alive>
+  </div>
+</transition>
+
+<transition name="why" mode="out-in">
+  <keep-alive>
+    <length
+      v-model="noRod"
+      v-if="index === 4"
+      @length_index="length_index"
+    ></length>
+  </keep-alive>
+</transition>
+
+<transition name="why" mode="out-in">
+  <keep-alive>
+    <panel v-if="index === 5" @panel_index="panel_index"></panel>
+  </keep-alive>
+</transition>
+<transition name="why" mode="out-in">
+  <keep-alive>
+    <fullness
+      v-if="index === 6"
+      @full_index="full_index"
+      @botton_base="botton_base"
+    ></fullness>
+  </keep-alive>
+</transition>
+<transition name="why" mode="out-in">
+  <keep-alive>
+    <botton
+      v-if="index === 7"
+      :bot_base="bot_base"
+      @botton_index="botton_index"
+    ></botton>
+  </keep-alive>
+</transition>
+<transition name="why" mode="out-in">
+  <keep-alive>
+    <alldone v-if="index === 8"></alldone>
+  </keep-alive>
+</transition>
 
     <!-- 固定位置的 联系我们 -->
     <p class="kconpp">Need help? <a href="#"> CONTACT US </a></p>
@@ -296,6 +314,54 @@ export default {
 </script>
 
 <style lang="less">
+
+
+// 动画 
+
+.why-enter-from,
+.why-leave-to {
+  opacity: 0;
+}
+.why-enter-active,
+.why-leave-active {
+  transition: opacity 0.3s ease;
+}
+.why-enter-active {
+  animation: bounce 0.3s ease;
+}
+.why-leave-active {
+  animation: bounce 0.3s ease reverse;
+}
+  @keyframes bounce {
+    0% {
+      transform: scale(0)
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+// 
+.why1-enter-from,
+.why1-leave-to {
+  opacity: 0;
+}
+.why1-enter-active,
+.why1-leave-active {
+  transition: opacity 0.5s ease;
+}
+.why1-enter-active {
+  animation: bounce 0.5s ease;
+}
+.why1-leave-active {
+  animation: bounce 0.5s ease reverse;
+}
+
+//
 .k_all {
   position: relative;
 }
@@ -311,6 +377,11 @@ export default {
 
 .k_step_active {
   border: 2px solid #333333 !important;
+}
+
+.k_step_done{
+  background-color: #8f7760 !important;
+  color: #fff !important;
 }
 
 .active_fc {

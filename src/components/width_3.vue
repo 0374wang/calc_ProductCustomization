@@ -1,13 +1,14 @@
 <template>
-
-<img src="../assets/img/width/coverage1.png" alt="" class="nor_img1" v-if="norod_flag == 11">
-<img src="../assets/img/width/no_rod_width.png" alt="" v-if="norod_flag == 12">
-<p class="width_p1">What’s the length of your rod?</p>
-<p class="width_p2">(finials excluded)</p>
-<div class="myK_Input k_center">
-<input type="number" class="width_inp" >
-<span class="width_sp" >inch</span>
-<div class="zongsebt" @click="width_step">CONTINUE</div>
+<div>
+    <img src="../assets/img/width/coverage1.png" alt="" class="nor_img1" v-if="norod_flag == 11">
+    <img src="../assets/img/width/no_rod_width.png" alt="" v-if="norod_flag == 12">
+    <p class="width_p1">What’s the length of your rod?</p>
+    <p class="width_p2">(finials excluded)</p>
+    <div class="myK_Input k_center">
+    <input type="number" class="width_inp" >
+    <span class="width_sp" >inch</span>
+    <div class="zongsebt" @click="width_step">CONTINUE</div>
+    </div>
 </div>
 </template>
 <script>

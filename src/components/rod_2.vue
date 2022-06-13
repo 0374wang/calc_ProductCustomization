@@ -2,15 +2,25 @@
 <img src="../assets/img/rod/rod1.png" alt="" />
 <!-- <div class="rod_all">
   <div class="rod_choose_1"> -->
+<div>
       <p class="rod1_1">Got a curtain rod already?</p>
       <p class="rod1_2">Choose one</p>
-      <div class="rod1_div_1" @click=" rod_i_mod">YES</div>
-      <div class="rod1_div_2" @click="rod_i_mod_2">NO</div>
+      <div class="baoguode">
+          <div class="rod1_div_1" @click=" rod_i_mod">YES</div>
+      </div>
+      <div class="baoguode">
+          <div class="rod1_div_2" @click="rod_i_mod_2">NO</div>
+      </div>
       <p class="rod1_3">I have a rod installed already.</p>
       <p class="rod1_4">I don't have a rod installed yet.</p>
+
+      <div class="tigongchoosel" @click=" rod_i_mod"></div>
+      <div class="tigongchooser" @click="rod_i_mod_2"></div>
+</div>
+
   <!-- </div>
 </div> -->
-
+ 
 </template>
 <script>
 import { ref } from "vue";
@@ -92,5 +102,21 @@ position: absolute;
     line-height: 28px;
     border-radius: 15px;
     cursor: pointer;
+}
+.tigongchoosel {
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    top: 150px;
+    left: 25%;
+    cursor: pointer;
+}
+.tigongchooser {
+    cursor: pointer;
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    top: 150px;
+    right: 25%;
 }
 </style>

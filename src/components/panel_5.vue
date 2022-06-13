@@ -1,4 +1,5 @@
 <template>
+<div>
 <img src="../assets/img/panel/单双底图.jpg" alt="">
 <img class="float_img had_dis" v-if="h_style == 'gro'" src="../assets/img/panel/grommet二倍贴地单双选择.png" alt="">
 <img class="float_img had_dis" v-if="h_style == 'pin'" src="../assets/img/panel/pinch二倍贴地单双选择.png" alt="">
@@ -38,6 +39,10 @@
 <p class="k_center panel_p1" style="top:28%">Choose one</p>
 <div class="k_panel_1 zongsebt" @click="panel_one">Single Panel</div>
 <div class="k_panel_2 zongsebt" @click="panle_two">Split Panels</div>
+<div class="tigongchoose_l" @click="panel_one"></div>
+<div class="tigongchoose_r" @click="panle_two"></div>
+</div>
+
 </template>
 <script>
 import { inject, onActivated, onDeactivated, ref } from '@vue/runtime-core';
@@ -68,10 +73,7 @@ export default {
               document.cookie = cname + "=" + cvalue + "; " + expires;
         }
 
-
-
         onActivated(()=>{
-
             if(getCookie('step7')){
                 console.log('此时有7');
                 //此时已经选择过了step6
@@ -158,15 +160,15 @@ export default {
                 console.log('此时无7')
             }
 
-        if(header.value == 'Pinch Pleat – Double'){
-            h_style.value = 'pin'
-        }
-        if(header.value == 'Grommet'){
-            h_style.value = 'gro'
-        }
-        if(header.value == 'Rod Pocket'){
-            h_style.value = 'rod'
-        }
+            if(header.value == 'Pinch Pleat – Double'){
+                h_style.value = 'pin'
+            }
+            if(header.value == 'Grommet'){
+                h_style.value = 'gro'
+            }
+            if(header.value == 'Rod Pocket'){
+                h_style.value = 'rod'
+            }
         })
 
         const panel_one = ()=>{
@@ -193,7 +195,7 @@ export default {
                     if(panel_flag == "Split Panels"){
                         document.cookie = `step6=323`; 
                     }
-            }   
+            }
         })
         return {panel_one,panle_two,header,h_style,getCookie,had_7}
     }
@@ -231,5 +233,20 @@ export default {
 .zongsebt{
     cursor: pointer;
 }
-    
+    .tigongchoose_l{  
+    position: absolute;
+    top: 160px;
+    width: 23%;
+    height: 61%;
+    left: 23%;
+    cursor: pointer;
+    }
+    .tigongchoose_r{
+    cursor: pointer;
+    position: absolute;
+    top: 160px;
+    width: 23%;
+    height: 61%;
+    right: 23%;
+    }
 </style>

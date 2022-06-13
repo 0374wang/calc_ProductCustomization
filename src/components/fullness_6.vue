@@ -1,4 +1,5 @@
 <template>
+<div>
     <img src="../assets/img/fullness/fullness_1.png" alt="">
 
     <img class="piaofu had_dis_full" src="../assets/img/fullness/full_zindex/rod10离地单片.png" alt=""
@@ -30,9 +31,6 @@
 
     <!-- <img src="../assets/img/fullness/full_zindex/pinch离地单片.png" alt="">
 <img src="../assets/img/fullness/full_zindex/pinch离地双片.png" alt=""> -->
-
-
-
 
     <!-- 二次选择 -->
     <img class="piaofu" v-if="had_9 == 611" src="../assets/img/botton/show/rod10离地单片.png" alt="">
@@ -78,8 +76,6 @@
     <img class="piaofu" v-if="had_9 == 1813" src="../assets/img/botton/show/pinch拖地单片.png" alt="">
     <img class="piaofu" v-if="had_9 == 1823" src="../assets/img/botton/show/pinch拖地双片.png" alt="">
 
-
-
     <p class=" k_fuln_p1 k_center">Which finished look of curtain do you prefer?<br>
         Choose fullness based on that.</p>
 
@@ -119,6 +115,8 @@
         </div>
 
     </div>
+</div>
+
 </template>
 <script>
 import { inject, onActivated, onDeactivated, onMounted, ref } from '@vue/runtime-core'
@@ -208,7 +206,6 @@ export default {
                 document.querySelector('.fuln_span2').innerText = "1.5x Fullness"
                 document.querySelector('.fuln_span3').innerText = "2x Fullness"
             }
-
 
             // 每次激活判断当前头部样式
             if (root_1.value.innerText == 'Pinch Pleat – Double') {

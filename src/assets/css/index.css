@@ -72,6 +72,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: 4;
+  cursor: pointer;
 }
 .kwang_step_ul .k_step_li .k_step_u {
   flex: 3;

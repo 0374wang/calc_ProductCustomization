@@ -1,4 +1,6 @@
 <template>
+<div>
+
 <img src="../assets/img/length/length_1.png" alt="" class="haveRod" v-if="len_flag == 11">
 <img src="../assets/img/length/length_noRod_1.png" alt="" class="norod_1" v-if="len_flag == 12">
 <img src="../assets/img/length/length_noRod_2.png" alt="" class="norod_2" v-if="len_flag == 13">
@@ -12,6 +14,9 @@
 <div class="zongsebt" v-if="len_flag == 12" @click="length_step_norod_1">CONTINUE</div>
 <div class="zongsebt" v-if="len_flag == 13" @click="length_step_norod_2">CONTINUE</div>
 </div>
+
+</div>
+
 </template>
 <script>
 import { onActivated, ref } from '@vue/runtime-core'
