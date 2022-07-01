@@ -1,6 +1,8 @@
 <template>
+<div class="done_container">
 
-<div>
+
+<div class="done_ccc">
   <img src="../assets/img/fullness/fullness_1.png" alt="" />
   <p class="k_fuln_p1 k_center">All done</p>
 <img class="piaofu"  v-if="kwang_done_c == 611" src="../assets/img/botton/show/rod10离地单片.png" alt="">
@@ -80,7 +82,7 @@
     </div>
   </aside>
 </div>
-
+</div>
 </template>
 <script>
 import { onMounted, onActivated, ref } from "vue";
@@ -121,7 +123,9 @@ export default {
 img {
   width: 100%;
 }
-
+.done_ccc{
+  width: 100%;
+}
 .zanshide {
   visibility: hidden;
 }

@@ -97,80 +97,45 @@
 
     <!-- 返回 -->
     <p class="myBack" @click="myBack()">＜ PREVIOUS</p>
-<transition name="why" mode="out-in">
-    <keep-alive>
-      <style1
-        v-if="index === 1"
-        :s_index="index"
-        @style_index="style_index"
-      ></style1>
-    </keep-alive>
-</transition>
 
-<transition name="why1" mode="out-in">
-  <div>
-    <rod2 v-if="index === 2" @rod_index="rod_index"></rod2>
-  </div>
-</transition>
+<router-link to="/rod">***********</router-link>
+<router-link to="/width">---------------</router-link>
 
-<transition name="why" mode="out-in">
-  <div>
-    <keep-alive>
-      <width v-model="noRod" v-if="index === 3" @width_index="width_index"></width>
-    </keep-alive>
-  </div>
+<button @click="myFn1">111111</button>
+<button @click="myFn2">2222222</button>
+<transition name="why" mode="out-in" appear>
+  <router-view></router-view>
 </transition>
+      <style1  v-if="index === 1"  :s_index="index"  @style_index="style_index"  ></style1>
 
-<transition name="why" mode="out-in">
-  <keep-alive>
-    <length
-      v-model="noRod"
-      v-if="index === 4"
-      @length_index="length_index"
-    ></length>
-  </keep-alive>
-</transition>
+      <rod2 v-if="index === 2" @rod_index="rod_index"></rod2>
 
-<transition name="why" mode="out-in">
-  <keep-alive>
+      <myWidth v-if="index === 3" v-model="noRod" @width_index="width_index"></myWidth>
+
+    <length v-if="index === 4"   v-model="noRod"  @length_index="length_index"></length>
+
     <panel v-if="index === 5" @panel_index="panel_index"></panel>
-  </keep-alive>
-</transition>
-<transition name="why" mode="out-in">
-  <keep-alive>
-    <fullness
-      v-if="index === 6"
-      @full_index="full_index"
-      @botton_base="botton_base"
-    ></fullness>
-  </keep-alive>
-</transition>
-<transition name="why" mode="out-in">
-  <keep-alive>
-    <botton
-      v-if="index === 7"
-      :bot_base="bot_base"
-      @botton_index="botton_index"
-    ></botton>
-  </keep-alive>
-</transition>
-<transition name="why" mode="out-in">
-  <keep-alive>
+
+    <fullness  v-if="index === 6"  @full_index="full_index"  @botton_base="botton_base"></fullness>
+
+    <botton v-if="index === 7"  :bot_base="bot_base" @botton_index="botton_index"></botton>
+
     <alldone v-if="index === 8"></alldone>
-  </keep-alive>
-</transition>
+
 
     <!-- 固定位置的 联系我们 -->
     <p class="kconpp">Need help? <a href="#"> CONTACT US </a></p>
   </div>
 </template>
-
+ 
 <script>
 import { ref, onMounted, provide, readonly } from "vue";
+import { useRouter } from 'vue-router';
+
 import "@/assets/css/index.css";
 import Style1 from "./components/style_1.vue";
 import Rod2 from "./components/rod_2.vue";
-import Width from "./components/width_3.vue";
+import myWidth from "./components/width_3.vue";
 import Length from "./components/length_4.vue";
 import Panel from "./components/panel_5.vue";
 import Fullness from "./components/fullness_6.vue";
@@ -180,7 +145,7 @@ export default {
   components: {
     Style1,
     Rod2,
-    Width,
+    myWidth,
     Length,
     Panel,
     Fullness,
@@ -188,6 +153,8 @@ export default {
     Alldone,
   },
   setup(props) {
+    const router = useRouter();
+
     var index = ref(1);
     const root_1 = ref(null);
     const root_2 = ref(null);
@@ -200,6 +167,22 @@ export default {
     var noRod = ref(11);
 
     const myprov = provide("kwang", 6);
+
+    const myFn1 = () => {
+      console.log("myFn1");
+      router.push({
+        path: '/rod',
+        name: 'rod'
+      });
+    };
+    const myFn2 = () => {
+      console.log("myFn2");
+      router.push({
+        path: '/width',
+        name: 'width'
+      });
+    };
+
     onMounted(() => {
       window.onresize = function () {
         var hrwid =
@@ -308,6 +291,8 @@ export default {
       botton_index,
       botton_base,
       bot_base,
+      myFn1,
+      myFn2
     };
   },
 };
@@ -318,20 +303,56 @@ export default {
 
 // 动画 
 
-.why-enter-from,
+// .why-enter-from,
+// .why-leave-to {
+//   opacity: 0;
+// }
+// .why-enter-active,
+// .why-leave-active {
+//   transition: opacity 0.5s ease;
+// }
+
+.why-enter-from {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.why-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .why-leave-to {
   opacity: 0;
+  transform: translateY(100px);
 }
+
 .why-enter-active,
 .why-leave-active {
-  transition: opacity 0.3s ease;
+  transition: all 1s ease;
 }
-.why-enter-active {
-  animation: bounce 0.3s ease;
-}
-.why-leave-active {
-  animation: bounce 0.3s ease reverse;
-}
+
+
+
+// .why-enter-from,
+// .why-leave-to {
+//   opacity: 0;
+// }
+// .why-enter-active,
+// .why-leave-active {
+//   transition: opacity 0.3s ease;
+// }
+// .why-enter-active {
+//   animation: bounce 0.3s ease;
+// }
+// .why-leave-active {
+//   animation: bounce 0.3s ease reverse;
+// }
+
   @keyframes bounce {
     0% {
       transform: scale(0)
@@ -345,21 +366,7 @@ export default {
       transform: scale(1);
     }
   }
-// 
-.why1-enter-from,
-.why1-leave-to {
-  opacity: 0;
-}
-.why1-enter-active,
-.why1-leave-active {
-  transition: opacity 0.5s ease;
-}
-.why1-enter-active {
-  animation: bounce 0.5s ease;
-}
-.why1-leave-active {
-  animation: bounce 0.5s ease reverse;
-}
+
 
 //
 .k_all {

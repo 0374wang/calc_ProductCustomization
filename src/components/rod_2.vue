@@ -1,8 +1,8 @@
 <template>
-<img src="../assets/img/rod/rod1.png" alt="" />
 <!-- <div class="rod_all">
-  <div class="rod_choose_1"> -->
-<div>
+    <div class="rod_choose_1"> -->
+<div class="rod2_container">
+    <img src="../assets/img/rod/rod1.png" alt="" />
       <p class="rod1_1">Got a curtain rod already?</p>
       <p class="rod1_2">Choose one</p>
       <div class="baoguode">

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="full_container">
     <img src="../assets/img/fullness/fullness_1.png" alt="">
 
     <img class="piaofu had_dis_full" src="../assets/img/fullness/full_zindex/rod10离地单片.png" alt=""
@@ -53,8 +53,8 @@
     <img class="piaofu" v-if="had_9 == 1821" src="../assets/img/botton/show/rod20拖地双片.png" alt="">
     <img class="piaofu" v-if="had_9 == 612" src="../assets/img/botton/show/grommet15离地单片.png" alt="">
     <img class="piaofu" v-if="had_9 == 622" src="../assets/img/botton/show/grommet15离地双片.png" alt="">
-    <img class="piaofu" v-if="had_9 == 712" src="../assets/img/botton/show/grommet20离地双片.png" alt="">
-    <img class="piaofu" v-if="had_9 == 722" src="../assets/img/botton/show/grommet20离地单片.png" alt="">
+    <img class="piaofu" v-if="had_9 == 722" src="../assets/img/botton/show/grommet20离地双片.png" alt="">
+    <img class="piaofu" v-if="had_9 == 712" src="../assets/img/botton/show/grommet20离地单片.png" alt="">
     <img class="piaofu" v-if="had_9 == 812" src="../assets/img/botton/show/grommet25离地单片.png" alt="">
     <img class="piaofu" v-if="had_9 == 822" src="../assets/img/botton/show/grommet25离地双片.png" alt="">
     <img class="piaofu" v-if="had_9 == 1112" src="../assets/img/botton/show/grommet15贴地单片.png" alt="">

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="panel_container">
 <img src="../assets/img/panel/单双底图.jpg" alt="">
 <img class="float_img had_dis" v-if="h_style == 'gro'" src="../assets/img/panel/grommet二倍贴地单双选择.png" alt="">
 <img class="float_img had_dis" v-if="h_style == 'pin'" src="../assets/img/panel/pinch二倍贴地单双选择.png" alt="">

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="botton_container">
 <img src="../assets/img/fullness/fullness_1.png" alt="">
 
     <!-- <img class="piaofu" src="../assets/img/fullness/full_zindex/rod10离地单片.png" alt="" v-if="kwang_done_c == 611">
@@ -163,7 +163,7 @@
     </div>
 
 
-    <h1>{{ bot_base }}</h1>
+
 </div>
     
 
@@ -218,7 +218,6 @@ export default {
                 document.querySelector('.fuln_r1').innerText = 'Kiss Floor'
                 document.querySelector('.fuln_r3').innerText = 'Exquisite look \n Need most accurate measurement';
                 let temp = getCookie('step6')
-
                 kwang_done_c.value = Number(temp) + 1000;
                 console.log(kwang_done_c.value)
                 document.cookie = `step7=${kwang_done_c.value}`;
@@ -229,7 +228,6 @@ export default {
                 document.querySelector('.fuln_r1').innerText = '2" Puddle'
                 document.querySelector('.fuln_r3').innerText = 'Luxurious look \n  Need cleaning more often';
                 let temp = getCookie('step6')
-
                 kwang_done_c.value = Number(temp) + 1500;
                 console.log(kwang_done_c.value)
                 document.cookie = `step7=${kwang_done_c.value}`;

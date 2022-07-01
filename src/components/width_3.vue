@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="width_container">
     <img src="../assets/img/width/coverage1.png" alt="" class="nor_img1" v-if="norod_flag == 11">
     <img src="../assets/img/width/no_rod_width.png" alt="" v-if="norod_flag == 12">
     <p class="width_p1">What’s the length of your rod?</p>
@@ -13,7 +13,7 @@
 </template>
 <script>
 import { ref } from '@vue/reactivity'
-import { inject, onActivated } from '@vue/runtime-core';
+import { inject, onActivated ,onMounted  } from '@vue/runtime-core';
 export default {
     props:{
     modelValue:{
@@ -23,10 +23,13 @@ export default {
     },
     emits: ["width_index"],
     setup(_,{emit}) {
+        let norod_flag = ref(null);
         console.log(inject("kwang"))
-        
-        var norod_flag = ref(null);
-        onActivated(()=>{
+            console.log(_.modelValue)
+            console.log(norod_flag.value)
+        onMounted(()=>{
+            console.log(_.modelValue)
+            console.log(norod_flag.value)
         if(_.modelValue == 12){
             norod_flag.value =  12
         };
@@ -51,7 +54,6 @@ export default {
     img{
         width: 100%;
     }
-
     .width_p1{
         font-family: 'Times New Roman Normal', 'Times New Roman';
     font-weight: 400;

@@ -37,7 +37,7 @@
     </div>
 </template>
 <script>
-import { ref } from "vue";
+import { onDeactivated, ref } from "vue";
 export default {
   props: {
     s_index: {
@@ -83,7 +83,9 @@ export default {
       document.cookie = `cts_header_c=Pinch Pleat – Double`;
       emit("style_index", style3.value.textContent);
     };
-
+    onDeactivated(()=>{
+      // document.querySelector('.kwang_container').style.display = 'none';
+    })
     return { style_index1, style_index2, style_index3, style1, style2, style3 ,getCookie };
   },
 };
@@ -93,6 +95,7 @@ export default {
   padding: 10px;
   cursor: pointer;
   border: 1px solid transparent;
+  box-shadow: 0px 0px 14px #424242;
 }
 .k_change_m_l:hover {
   border: 1px solid #8f7760;

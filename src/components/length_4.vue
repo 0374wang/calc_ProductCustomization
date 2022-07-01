@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="length_container">
 
 <img src="../assets/img/length/length_1.png" alt="" class="haveRod" v-if="len_flag == 11">
 <img src="../assets/img/length/length_noRod_1.png" alt="" class="norod_1" v-if="len_flag == 12">
