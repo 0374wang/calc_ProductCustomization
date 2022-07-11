@@ -27,7 +27,9 @@ export default {
     emits:["length_index"],
     setup(_,{emit}) {
         var len_flag = ref(null);
+        
         onActivated(()=>{
+            consle.log("activated",_,_.modelValue);
             if(_.modelValue == 11){
                 len_flag.value =11;
             };

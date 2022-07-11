@@ -10,10 +10,13 @@
     <div class="zongsebt" @click="width_step">CONTINUE</div>
     </div>
 </div>
+<h1>{{$store.state._rodHave}}</h1>
+
 </template>
 <script>
 import { ref } from '@vue/reactivity'
 import { inject, onActivated ,onMounted  } from '@vue/runtime-core';
+import { useStore } from 'vuex';
 export default {
     props:{
     modelValue:{
@@ -23,6 +26,8 @@ export default {
     },
     emits: ["width_index"],
     setup(_,{emit}) {
+        const store = useStore()
+        console.log("3",store.state.rodHave)
         let norod_flag = ref(null);
         console.log(inject("kwang"))
             console.log(_.modelValue)
@@ -45,7 +50,6 @@ export default {
             }
         }
         return {width_step,norod_flag}
-
     }
 
 }

@@ -6,7 +6,7 @@
       <p class="rod1_1">Got a curtain rod already?</p>
       <p class="rod1_2">Choose one</p>
       <div class="baoguode">
-          <div class="rod1_div_1" @click=" rod_i_mod">YES</div>
+          <div class="rod1_div_1" @click="rod_i_mod">YES</div>
       </div>
       <div class="baoguode">
           <div class="rod1_div_2" @click="rod_i_mod_2">NO</div>
@@ -18,21 +18,27 @@
       <div class="tigongchooser" @click="rod_i_mod_2"></div>
 </div>
 
+<h1>{{$store.state._rodHave}}</h1>
+<h1>{{$store.state._headerStyle}}</h1>
   <!-- </div>
 </div> -->
  
 </template>
 <script>
 import { ref } from "vue";
-
+import store from "../store";
+import { useStore } from 'vuex';
 export default {
 
     emits:["rod_index","rod_i_mod_2"],
     setup(_,{emit}) {
+        const store =  useStore()
         const rod_i_mod = function(){
+            store.state._rodHave = true;
             emit("rod_index",'YES')
         };
         const rod_i_mod_2 =function (){
+            store.state._rodHave = false;
             emit("rod_index","NO")
         };
         return {rod_i_mod,rod_i_mod_2};

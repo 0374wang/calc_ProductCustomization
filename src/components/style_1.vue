@@ -38,6 +38,7 @@
 </template>
 <script>
 import { onDeactivated, ref } from "vue";
+import { useStore } from 'vuex';
 export default {
   props: {
     s_index: {
@@ -45,9 +46,11 @@ export default {
     },
   },
   setup(props, { emit }) {
+    
     const style1 = ref(null);
     const style2 = ref(null);
     const style3 = ref(null);
+    const store = useStore();
     function getCookie(cookie) {
                  var allcookies = document.cookie;
                  var cookie_pos = allcookies.indexOf(cookie); 
@@ -63,24 +66,18 @@ export default {
         }
 
     const style_index1 = function () {
-      if(getCookie('cts_header_c')){
-        document.cookie = `header_had=${getCookie('cts_header_c')}`;
-      }
-      document.cookie = `cts_header_c=Rod Pocket`;
+      store.state._headerStyle = "Rod Pocket";
+
       emit("style_index", style1.value.textContent);
     };
     const style_index2 = function () {
-      if(getCookie('cts_header_c')){
-        document.cookie = `header_had=${getCookie('cts_header_c')}`;
-      }
-      document.cookie = `cts_header_c=Grommet`;
+      store.state._headerStyle = "Grommet";
+
       emit("style_index", style2.value.textContent);
     };
     const style_index3 = function () {
-      if(getCookie('cts_header_c')){
-        document.cookie = `header_had=${getCookie('cts_header_c')}`;
-      }
-      document.cookie = `cts_header_c=Pinch Pleat – Double`;
+      store.state._headerStyle = "Pinch Pleat – Double";
+
       emit("style_index", style3.value.textContent);
     };
     onDeactivated(()=>{

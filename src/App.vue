@@ -4,22 +4,15 @@
     <section class="kwang_step_a" style="position: relative">
       <ul class="kwang_step_ul">
         <li class="k_step_li" @click="index = 1">
-          <div class="k_step_u" :class="{ 'k_step_active': 1 == index , 'k_step_done': 1 < index}" >
-            <span
-              class="hrleft"
-              :class="{ active_fc: 1 == index }"
-            >
-              1</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 1 == index, k_step_done: 1 < index }">
+            <span class="hrleft" :class="{ active_fc: 1 == index }"> 1</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 1 == index }">Style</div>
           <p ref="root_1" class="root_1_header"></p>
         </li>
         <li class="k_step_li" @click="index = 2">
-          <div class="k_step_u" :class="{ k_step_active: 2 == index , 'k_step_done': 2 < index}">
-            <span  :class="{ active_fc: 2 == index }">
-              2</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 2 == index, k_step_done: 2 < index }">
+            <span :class="{ active_fc: 2 == index }"> 2</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 2 == index }">
             Rod Installed
@@ -27,10 +20,8 @@
           <p ref="root_2"></p>
         </li>
         <li class="k_step_li" @click="index = 3">
-          <div class="k_step_u" :class="{ k_step_active: 3 == index , 'k_step_done': 3 < index}">
-            <span  :class="{ active_fc: 3 == index }">
-              3</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 3 == index, k_step_done: 3 < index }">
+            <span :class="{ active_fc: 3 == index }"> 3</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 3 == index }">
             Coverage Width
@@ -38,10 +29,8 @@
           <p ref="root_3"></p>
         </li>
         <li class="k_step_li" @click="index = 4">
-          <div class="k_step_u" :class="{ k_step_active: 4 == index , 'k_step_done': 4 < index}">
-            <span  :class="{ active_fc: 4 == index }">
-              4</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 4 == index, k_step_done: 4 < index }">
+            <span :class="{ active_fc: 4 == index }"> 4</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 4 == index }">
             Coverage Length
@@ -49,19 +38,15 @@
           <p ref="root_4"></p>
         </li>
         <li class="k_step_li" @click="index = 5">
-          <div class="k_step_u" :class="{ k_step_active: 5 == index ,'k_step_done': 5 < index}">
-            <span  :class="{ active_fc: 5 == index }">
-              5</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 5 == index, k_step_done: 5 < index }">
+            <span :class="{ active_fc: 5 == index }"> 5</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 5 == index }">Panels</div>
           <p ref="root_5" class="panel_flag"></p>
         </li>
         <li class="k_step_li" @click="root_6_index">
-          <div class="k_step_u" :class="{ k_step_active: 6 == index ,'k_step_done': 6 < index}">
-            <span  :class="{ active_fc: 6 == index }">
-              6</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 6 == index, k_step_done: 6 < index }">
+            <span :class="{ active_fc: 6 == index }"> 6</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 6 == index }">
             Fullness
@@ -69,22 +54,15 @@
           <p class="fullness_pin" ref="root_6"></p>
         </li>
         <li class="k_step_li" @click="index = 7">
-          <div class="k_step_u" :class="{ k_step_active: 7 == index ,'k_step_done': 7 < index}">
-            <span  :class="{ active_fc: 7 == index }">
-              7</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 7 == index, k_step_done: 7 < index }">
+            <span :class="{ active_fc: 7 == index }"> 7</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 7 == index }">Botton</div>
           <p ref="root_7"></p>
         </li>
         <li class="k_step_li" @click="index = 8">
-          <div class="k_step_u" :class="{ k_step_active: 8 == index ,'k_step_done': 8 <= index}">
-            <span
-              class="hrright"
-              :class="{ active_fc: 8 == index }"
-            >
-              8</span
-            >
+          <div class="k_step_u" :class="{ k_step_active: 8 == index, k_step_done: 8 <= index }">
+            <span class="hrright" :class="{ active_fc: 8 == index }"> 8</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 8 == index }">
             All done
@@ -98,39 +76,35 @@
     <!-- 返回 -->
     <p class="myBack" @click="myBack()">＜ PREVIOUS</p>
 
-<router-link to="/rod">***********</router-link>
-<router-link to="/width">---------------</router-link>
 
-<button @click="myFn1">111111</button>
-<button @click="myFn2">2222222</button>
-<transition name="why" mode="out-in" appear>
-  <router-view></router-view>
-</transition>
-      <style1  v-if="index === 1"  :s_index="index"  @style_index="style_index"  ></style1>
+    <transition name="why" mode="out-in" appear>
+      <style1 v-if="index === 1" :s_index="index" @style_index="style_index"></style1>
+    </transition>
 
+    <transition name="why" mode="in-out" appear>
       <rod2 v-if="index === 2" @rod_index="rod_index"></rod2>
+    </transition>
 
-      <myWidth v-if="index === 3" v-model="noRod" @width_index="width_index"></myWidth>
+    <myWidth v-if="index === 3" v-model="noRod" @width_index="width_index"></myWidth>
 
-    <length v-if="index === 4"   v-model="noRod"  @length_index="length_index"></length>
+    <length v-if="index === 4" v-model="noRod" @length_index="length_index"></length>
 
     <panel v-if="index === 5" @panel_index="panel_index"></panel>
 
-    <fullness  v-if="index === 6"  @full_index="full_index"  @botton_base="botton_base"></fullness>
+    <fullness v-if="index === 6" @full_index="full_index" @botton_base="botton_base"></fullness>
 
-    <botton v-if="index === 7"  :bot_base="bot_base" @botton_index="botton_index"></botton>
+    <botton v-if="index === 7" :bot_base="bot_base" @botton_index="botton_index"></botton>
 
     <alldone v-if="index === 8"></alldone>
-
 
     <!-- 固定位置的 联系我们 -->
     <p class="kconpp">Need help? <a href="#"> CONTACT US </a></p>
   </div>
 </template>
- 
+
 <script>
 import { ref, onMounted, provide, readonly } from "vue";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 import "@/assets/css/index.css";
 import Style1 from "./components/style_1.vue";
@@ -167,21 +141,6 @@ export default {
     var noRod = ref(11);
 
     const myprov = provide("kwang", 6);
-
-    const myFn1 = () => {
-      console.log("myFn1");
-      router.push({
-        path: '/rod',
-        name: 'rod'
-      });
-    };
-    const myFn2 = () => {
-      console.log("myFn2");
-      router.push({
-        path: '/width',
-        name: 'width'
-      });
-    };
 
     onMounted(() => {
       window.onresize = function () {
@@ -291,17 +250,13 @@ export default {
       botton_index,
       botton_base,
       bot_base,
-      myFn1,
-      myFn2
     };
   },
 };
 </script>
 
 <style lang="less">
-
-
-// 动画 
+// 动画
 
 // .why-enter-from,
 // .why-leave-to {
@@ -316,6 +271,7 @@ export default {
   opacity: 0;
   transform: translateY(100px);
 }
+
 .why-enter-to {
   opacity: 1;
   transform: translateY(0);
@@ -336,8 +292,6 @@ export default {
   transition: all 1s ease;
 }
 
-
-
 // .why-enter-from,
 // .why-leave-to {
 //   opacity: 0;
@@ -353,20 +307,19 @@ export default {
 //   animation: bounce 0.3s ease reverse;
 // }
 
-  @keyframes bounce {
-    0% {
-      transform: scale(0)
-    }
-
-    50% {
-      transform: scale(1.1);
-    }
-
-    100% {
-      transform: scale(1);
-    }
+@keyframes bounce {
+  0% {
+    transform: scale(0);
   }
 
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 
 //
 .k_all {
@@ -386,7 +339,7 @@ export default {
   border: 2px solid #333333 !important;
 }
 
-.k_step_done{
+.k_step_done {
   background-color: #8f7760 !important;
   color: #fff !important;
 }
