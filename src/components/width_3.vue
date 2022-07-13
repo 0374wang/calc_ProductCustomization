@@ -15,7 +15,7 @@
 </template>
 <script>
 import { ref } from '@vue/reactivity'
-import { inject, onActivated ,onMounted  } from '@vue/runtime-core';
+import {  onActivated ,onMounted  } from '@vue/runtime-core';
 import { useStore } from 'vuex';
 export default {
     props:{
@@ -29,7 +29,6 @@ export default {
         const store = useStore()
         console.log("3",store.state.rodHave)
         let norod_flag = ref(null);
-        console.log(inject("kwang"))
             console.log(_.modelValue)
             console.log(norod_flag.value)
         onMounted(()=>{

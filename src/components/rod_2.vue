@@ -16,22 +16,22 @@
 
       <div class="tigongchoosel" @click=" rod_i_mod"></div>
       <div class="tigongchooser" @click="rod_i_mod_2"></div>
+      
 </div>
 
-<h1>{{$store.state._rodHave}}</h1>
-<h1>{{$store.state._headerStyle}}</h1>
   <!-- </div>
 </div> -->
  
 </template>
 <script>
-import { ref } from "vue";
+import { ref, onUnmounted } from "vue";
 import store from "../store";
 import { useStore } from 'vuex';
 export default {
 
     emits:["rod_index","rod_i_mod_2"],
     setup(_,{emit}) {
+    console.log("进入了2");
         const store =  useStore()
         const rod_i_mod = function(){
             store.state._rodHave = true;
@@ -41,6 +41,10 @@ export default {
             store.state._rodHave = false;
             emit("rod_index","NO")
         };
+        onUnmounted(()=>{
+            console.log("onUnmounted");
+            document.querySelector("#app").style.color = "white";
+        });
         return {rod_i_mod,rod_i_mod_2};
     }
 };
@@ -56,6 +60,9 @@ export default {
 // }
 img{
     width: 100%;
+}
+.rod2_container{
+    position: relative;
 }
 .rod1_1{
     position: absolute;

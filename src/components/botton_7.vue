@@ -169,7 +169,7 @@
 
 </template>
 <script>
-import { inject, onActivated, onMounted, ref } from '@vue/runtime-core'
+import {  onActivated, onMounted, ref } from '@vue/runtime-core'
 export default {
     props: ["bot_base"],
     emits: ["botton_index"],
@@ -180,7 +180,6 @@ export default {
         var full_index_1 = ref(null)
         //判断 头部样式 + 单双 + 丰满度
         var full_index_2 = ref(null)
-        let root_1 = inject("root_1")
         let small_img = ref(null)
         var alldone_ = ref(null)
         var kwang_done_c = ref(null)

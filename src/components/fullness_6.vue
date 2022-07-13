@@ -119,7 +119,7 @@
 
 </template>
 <script>
-import { inject, onActivated, onDeactivated, onMounted, ref } from '@vue/runtime-core'
+import {  onActivated, onDeactivated, onMounted, ref } from '@vue/runtime-core'
 export default {
     emits: ["full_index", "botton_base"],
     setup(_, { emit }) {
@@ -129,7 +129,6 @@ export default {
         var full_index_1 = ref(null)
         //判断 头部样式 + 单双 + 丰满度
         var full_index_2 = ref(null)
-        let root_1 = inject("root_1")
         var had_8 = ref(null)
         var had_9 = ref(null)
         let small_img = ref(null);

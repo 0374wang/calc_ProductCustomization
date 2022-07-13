@@ -29,7 +29,7 @@ export default {
         var len_flag = ref(null);
         
         onActivated(()=>{
-            consle.log("activated",_,_.modelValue);
+            console.log("activated",_,_.modelValue);
             if(_.modelValue == 11){
                 len_flag.value =11;
             };
@@ -53,6 +53,7 @@ export default {
               document.cookie = `cts_length_c=${len}`
                 emit("length_index",len)
         }
+
         return{length_step,len_flag,length_step_norod_1,length_step_norod_2};
     }
 }

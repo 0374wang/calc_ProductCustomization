@@ -1,7 +1,13 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [{
         path: "/",
-        redirect: "/rod",
+        redirect: "/width",
+    },
+    {
+        path: "/style",
+        name: "style",
+        component: () =>
+            import ("@/components/style_1.vue"),
     },
     {
         path: "/rod",
@@ -15,6 +21,31 @@ const routes = [{
         component: () =>
             import ("@/components/width_3.vue"),
     },
+    {
+        path: "/length",
+        name: "length",
+        component: () =>
+            import ("@/components/length_4.vue"),
+    },
+    {
+        path: "/panel",
+        name: "panel",
+        component: () =>
+            import ("@/components/panel_5.vue"),
+    },
+    {
+        path: "/fullness",
+        name: "fullness",
+        component: () =>
+            import ("@/components/fullness_6.vue"),
+    },
+    {
+        path: "/botton",
+        name: "botton",
+        component: () =>
+            import ("@/components/botton_7.vue"),
+    }
+
 ];
 const router = createRouter({
     history: createWebHashHistory(),

@@ -46,7 +46,7 @@ export default {
     },
   },
   setup(props, { emit }) {
-    
+    console.log("进入了1");
     const style1 = ref(null);
     const style2 = ref(null);
     const style3 = ref(null);
@@ -68,7 +68,7 @@ export default {
     const style_index1 = function () {
       store.state._headerStyle = "Rod Pocket";
 
-      emit("style_index", style1.value.textContent);
+      emit("style_i ndex", style1.value.textContent);
     };
     const style_index2 = function () {
       store.state._headerStyle = "Grommet";

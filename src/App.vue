@@ -3,14 +3,14 @@
     <!-- 步骤调转 -->
     <section class="kwang_step_a" style="position: relative">
       <ul class="kwang_step_ul">
-        <li class="k_step_li" @click="index = 1">
+        <li class="k_step_li" @click="index_1">
           <div class="k_step_u" :class="{ k_step_active: 1 == index, k_step_done: 1 < index }">
             <span class="hrleft" :class="{ active_fc: 1 == index }"> 1</span>
           </div>
           <div class="k_step_d" :class="{ active_fc: 1 == index }">Style</div>
           <p ref="root_1" class="root_1_header"></p>
         </li>
-        <li class="k_step_li" @click="index = 2">
+        <li class="k_step_li" @click="index_2">
           <div class="k_step_u" :class="{ k_step_active: 2 == index, k_step_done: 2 < index }">
             <span :class="{ active_fc: 2 == index }"> 2</span>
           </div>
@@ -74,36 +74,53 @@
     </section>
 
     <!-- 返回 -->
-    <p class="myBack" @click="myBack()">＜ PREVIOUS</p>
+    <p class="myBack" @click="myBack()"> ＜ PREVIOUS</p>
+    <p class="myNext" @click="myNext()"> ＞ NEXT</p>
 
+      <transition name="wwz" mode="out-in">
+        <keep-alive>
 
-    <transition name="why" mode="out-in" appear>
       <style1 v-if="index === 1" :s_index="index" @style_index="style_index"></style1>
-    </transition>
 
-    <transition name="why" mode="in-out" appear>
-      <rod2 v-if="index === 2" @rod_index="rod_index"></rod2>
-    </transition>
+      <rod2 v-else-if="index === 2" @rod_index="rod_index"></rod2>
 
-    <myWidth v-if="index === 3" v-model="noRod" @width_index="width_index"></myWidth>
+    <myWidth v-else-if="index === 3" v-model="noRod" @width_index="width_index"></myWidth>
 
-    <length v-if="index === 4" v-model="noRod" @length_index="length_index"></length>
+    <length v-else-if="index === 4" v-model="noRod" @length_index="length_index"></length>
 
-    <panel v-if="index === 5" @panel_index="panel_index"></panel>
+    <panel v-else-if="index === 5" @panel_index="panel_index"></panel>
 
-    <fullness v-if="index === 6" @full_index="full_index" @botton_base="botton_base"></fullness>
+    <fullness v-else-if="index === 6" @full_index="full_index" @botton_base="botton_base"></fullness>
 
-    <botton v-if="index === 7" :bot_base="bot_base" @botton_index="botton_index"></botton>
+    <botton v-else-if="index === 7" :bot_base="bot_base" @botton_index="botton_index"></botton>
 
-    <alldone v-if="index === 8"></alldone>
+    <alldone v-else-if="index === 8"></alldone>
+        </keep-alive>
+      </transition>
 
+      
     <!-- 固定位置的 联系我们 -->
+
+      <!-- <transition name="wwz" mode="out-in" appear > -->
+
+    <!-- <router-view v-slot="{ Component , route}" >
+        <keep-alive>
+          <component :is="Component" :key="route.name"></component>
+        </keep-alive>
+    </router-view> -->
+    
+    <!-- <router-view></router-view>
+      </transition> -->
+    
+    <h1><router-link to="/style">ssssssss</router-link></h1>
+    <h1><router-link to="/rod">rrrrrrr</router-link></h1>
     <p class="kconpp">Need help? <a href="#"> CONTACT US </a></p>
   </div>
+
 </template>
 
 <script>
-import { ref, onMounted, provide, readonly } from "vue";
+import { ref, onMounted, provide, readonly, computed } from "vue";
 import { useRouter } from "vue-router";
 
 import "@/assets/css/index.css";
@@ -117,6 +134,7 @@ import Botton from "./components/botton_7.vue";
 import Alldone from "./components/done_8.vue";
 export default {
   components: {
+
     Style1,
     Rod2,
     myWidth,
@@ -165,13 +183,8 @@ export default {
     const style_index = function (a) {
       root_1.value.textContent = a;
       index.value++;
-      header.value = a;
-      return header;
     };
-    // 把step1的header样式传给step5,提供给step5显示不同的头部来选择单双
-    var header = ref(0);
-    provide("header", header);
-    provide("root_1", root_1);
+
 
     const rod_index = function (a) {
       root_2.value.textContent = a;
@@ -228,6 +241,20 @@ export default {
       bot_base.value = a;
       console.log(bot_base.value);
     };
+
+
+
+    // 编程式路由的跳转
+    const index_1 = function () {
+      router.push({ name: "style" ,
+       });
+    };
+    const index_2 = function () {
+      router.push({ name: "rod" ,
+        });
+    };
+
+
     return {
       index,
       myBack,
@@ -242,7 +269,6 @@ export default {
       panel_index,
       root_5,
       noRod,
-      header,
       root_6_index,
       full_index,
       root_6,
@@ -250,6 +276,9 @@ export default {
       botton_index,
       botton_base,
       bot_base,
+      // 
+      index_1,
+      index_2,
     };
   },
 };
@@ -266,6 +295,31 @@ export default {
 // .why-leave-active {
 //   transition: opacity 0.5s ease;
 // }
+
+.wwz-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.wwz-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wwz-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wwz-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.wwz-enter-active,
+.wwz-leave-active {
+  transition: all 0.5s;
+}
 
 .why-enter-from {
   opacity: 0;
@@ -370,7 +424,17 @@ export default {
   cursor: pointer;
   z-index: 3;
 }
-
+.myNext {
+  position: absolute;
+  font-family: "Inter";
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  right: 200px;
+  padding-top: 10px;
+  cursor: pointer;
+  z-index: 3;
+}
 //初始化样式
 html,
 body,
